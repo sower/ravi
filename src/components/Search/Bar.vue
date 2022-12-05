@@ -1,5 +1,5 @@
 <template>
-    <n-space align="center" justify="space-around">
+    <n-space align="center" :wrap="false">
         <n-avatar round size="small" style="background-color: #18a058">
             {{ props.index }}
         </n-avatar>

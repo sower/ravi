@@ -3,13 +3,16 @@
     <n-space align="center" justify="space-around" size="large">
       <n-space align="center" justify="space-around">
         <n-avatar color="white" size="large" src="./favicon.svg" />
-        <h1 class="title">
-          Ravi
-        </h1>
+        <router-link to="/">
+          <h1 class="title">
+            Ravi
+          </h1>
+        </router-link>
       </n-space>
 
       <n-space class="font-bold" align="center" justify="space-around">
         <router-link to="/keyboard">键盘模式</router-link>
+        <router-link to="/search">搜索模式</router-link>
         <router-link to="/hothub">热榜</router-link>
       </n-space>
 
@@ -19,11 +22,12 @@
             <UserOutlined />
           </n-icon>
         </n-avatar>
+        <router-link to="/Settings">
         <n-avatar color="white">
           <n-icon color="black">
             <SettingTwotone />
           </n-icon>
-        </n-avatar>
+        </n-avatar></router-link>
         <n-dropdown trigger="hover" :options="getLanguageList()" @select="changeLanguage">
           <n-text>{{ t("language") }}</n-text>
         </n-dropdown>

@@ -7,7 +7,7 @@ import { defineStore } from 'pinia';
 interface ProjectSettingState {
   language: string; //语言
   navMode: string; //导航模式
-  theme: string; //导航风格
+  theme: string;
   isMobile: boolean;
 }
 

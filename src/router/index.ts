@@ -27,15 +27,20 @@ const routes = [
     //         return import(/* webpackChunkName: "Keyboard" */ '../views/Bookmarks.vue')
     //     }
     // },
-    // {
-    //     path: '/search',
-    //     name: 'Search',
-    //     component: () => import(/* webpackChunkName: "404" */ '../views/MultiSearch.vue')
-    // },
+    {
+        path: '/search',
+        name: 'Search',
+        component: () => import(/* webpackChunkName: "404" */ '../views/MultiSearch.vue')
+    },
     {
         path: '/hothub',
         name: 'Hothub',
         component: () => import('@/views/HotHub.vue')
+    },
+    {
+        path: '/Settings',
+        name: 'Settings',
+        component: () => import('@/views/Settings.vue')
     },
     {
         path: '/:pathMatch(.*)*',

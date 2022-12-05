@@ -1,6 +1,6 @@
 <template>
   <n-grid item-responsive :x-gap="35" :y-gap="35" cols="1 800:2 1200:3">
-    <n-grid-item v-for="group in websites">
+    <n-grid-item v-for="group in websites" class="mx-auto">
       <square :group="group" />
     </n-grid-item>
   </n-grid>
@@ -15,7 +15,6 @@ import Modal from '@/components/ModalContent/Modal.vue';
 import { useWebsiteStore } from '@/store/modules/website';
 import { storeToRefs } from 'pinia';
 import { provide, ref } from 'vue';
-
 
 const websiteStore = useWebsiteStore()
 

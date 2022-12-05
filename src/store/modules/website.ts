@@ -11,6 +11,10 @@ function getCoordinate(id: number) {
     return { x, y };
 }
 
+function saveToStorage(websites) {
+    storage.setItem("websites", JSON.stringify(websites));
+}
+
 export const useWebsiteStore = defineStore({
     id: 'app-site',
     state: () => ({
@@ -56,16 +60,20 @@ export const useWebsiteStore = defineStore({
                 if (preSite) this.removeShortcut(preSite);
             }
             sites[y] = site;
-            storage.setItem("websites", JSON.stringify(this.websites));
+            saveToStorage(this.websites);
         },
         setTitle(id: number, title: string) {
             const { x } = getCoordinate(id)
             this.websites[x].title = title;
-            storage.setItem("websites", JSON.stringify(this.websites));
+            saveToStorage(this.websites);
         },
-
+        setWebsites(websites) {
+            this.websites = websites;
+            saveToStorage(websites);
+        },
     },
 });
+
 
 // Need to be used outside the setup
 export function useWebsiteStoreWidthOut() {

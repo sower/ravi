@@ -1,5 +1,5 @@
 <template>
-  <n-h4 prefix="bar" style="margin-left: 1em; max-width: 90%;" @click="openInput">
+  <n-h4 prefix="bar" class="ml-1 max-w-[90%]" @click="openInput">
     <n-input v-model:value="groupTitle" type="text" :status="inputStatus" maxlength="10" minlength="1" autofocus
       @blur="saveTitle" clearable v-if="showInput" />
     <n-text strong v-else>

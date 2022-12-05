@@ -15,8 +15,9 @@ import Search from '@/components/Search/Search.vue';
 <style scoped>
 .search-box {
   padding: 25px;
+  padding-top: 5px;
   margin: auto;
   max-width: 80%;
-  min-width: 395px;
+  min-width: 345px;
 }
 </style>
