@@ -1,3 +1,3 @@
-import Grid from './Grid.vue';
+import Grid from './Grid.vue'
 
-export { Grid };
+export { Grid }

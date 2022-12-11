@@ -1,56 +1,52 @@
-import { LangEnum } from '@/enum/appEnum';
-import { changeLocale } from '@/lang';
-import { store } from '@/store';
-import { defineStore } from 'pinia';
-
+import { defineStore } from 'pinia'
+import type { LangEnum } from '~/enum/appEnum'
 
 interface ProjectSettingState {
-  language: string; //语言
-  navMode: string; //导航模式
-  theme: string;
-  isMobile: boolean;
+  language: string // 语言
+  navMode: string // 导航模式
+  theme: string
+  isMobile: boolean
 }
 
 export const useProjectSettingStore = defineStore({
   id: 'app-project-setting',
   state: (): ProjectSettingState => ({
     language: localStorage.getItem('lang') || 'en',
-    //导航模式 vertical 左侧菜单模式 horizontal 顶部菜单模式
+    // 导航模式 vertical 左侧菜单模式 horizontal 顶部菜单模式
     navMode: 'vertical',
-    //导航风格 dark 暗色侧边栏 light 白色侧边栏 header-dark 暗色顶栏
+    // 导航风格 dark 暗色侧边栏 light 白色侧边栏 header-dark 暗色顶栏
     theme: '',
     // 是否处于移动端模式
     isMobile: false,
   }),
   getters: {
     getLanguage(): string {
-      return this.language;
+      return this.language
     },
     getNavMode(): string {
-      return this.navMode;
+      return this.navMode
     },
     getTheme(): string {
-      return this.theme;
+      return this.theme
     },
     getIsMobile(): boolean {
-      return this.isMobile;
+      return this.isMobile
     },
   },
   actions: {
     setLanguage(value: LangEnum): void {
-      this.language = value;
-      changeLocale(value);
+      this.language = value
     },
     setTheme(value: string): void {
-      this.theme = value;
+      this.theme = value
     },
     setIsMobile(value: boolean): void {
-      this.isMobile = value;
+      this.isMobile = value
     },
   },
-});
+})
 
 // Need to be used outside the setup
 export function useProjectSettingStoreWithOut() {
-  return useProjectSettingStore(store);
+  return useProjectSettingStore(store)
 }

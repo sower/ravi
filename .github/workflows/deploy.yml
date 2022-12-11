@@ -34,7 +34,7 @@ jobs:
             ${{ runner.os }}-node-
 
       # 替换路径
-      - run: sed -i 's/"\/"/"\/ravi\/"/g' vite.config.ts
+      - run: sed -i 's/import.meta.env.BASE_URL/"\/ravi\/"/g' src/main.ts
       - run: npm ci
       - run: npm run build
 

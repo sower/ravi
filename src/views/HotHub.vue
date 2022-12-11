@@ -1,27 +1,5 @@
-<template>
-  <BasicLayout>
-    <n-space justify="center" class="box">
-      <n-icon size="36" color="red">
-        <FireFilled />
-      </n-icon>
-      <n-gradient-text :size="24" type="danger">
-        Hothub
-      </n-gradient-text>
-    </n-space>
-
-    <div v-for="item in hotList" class="box">
-      <HotThing :item="item" />
-    </div>
-  </BasicLayout>
-</template>
-
 <script setup lang="ts">
-import BasicLayout from '@/layout/BasicLayout.vue';
-import HotThing from '@/layout/HotThing.vue';
-import { getTophub } from '@/utils/requests';
-import { FireFilled } from '@vicons/antd';
-import { onBeforeMount } from "@vue/runtime-core";
-import { ref } from 'vue';
+import { getTophub } from '~/utils/requests';
 
 const hotList = ref([])
 
@@ -30,9 +8,28 @@ function getTophubList() {
 }
 
 onBeforeMount(() => {
-  getTophubList();
-});
+  getTophubList()
+})
 </script>
+
+<template>
+  <n-space justify="center" class="box">
+    <div text-2xl font-medium i-carbon-fire color-red />
+    <n-gradient-text :size="24" type="danger">
+      Hothub
+    </n-gradient-text>
+  </n-space>
+
+  <n-space v-if="hotList.length === 0" my-3xl vertical>
+    <n-skeleton height="40px" mx-auto width="85%" />
+    <n-skeleton height="40px" mx-auto width="80%" :sharp="false" />
+    <n-skeleton height="40px" mx-auto width="80%" round />
+    <n-skeleton height="40px" mx-auto circle />
+  </n-space>
+  <div v-for="item in hotList" :key="item" class="box">
+    <HotThing :item="item" />
+  </div>
+</template>
 
 <style scoped>
 .box {

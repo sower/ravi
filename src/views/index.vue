@@ -1,3 +1,6 @@
+<script setup lang="ts">
+</script>
+
 <template>
   <n-layout-content content-style="padding: 24px;">
     <div class="search-box">
@@ -6,11 +9,6 @@
     <grid />
   </n-layout-content>
 </template>
-
-<script setup lang="ts">
-import Grid from '@/components/Grid/Grid.vue';
-import Search from '@/components/Search/Search.vue';
-</script>
 
 <style scoped>
 .search-box {

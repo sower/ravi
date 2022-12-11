@@ -1,76 +1,73 @@
-<template>
-  <basic-layout>
-    <div class="container">
-      <div class="row" v-for="row_keys in keys" :key="row_keys">
-        <button v-for="key in row_keys" :key="key" :ref="setRefs" @click="onClick(key)">
-          <favicon v-if="hotkeys[key]" class="fav" :src="hotkeys[key].url" :text="hotkeys[key].name" />
-          {{ key }}
-        </button>
-      </div>
-      <button class="space" ref="space">Space</button>
-    </div>
-  </basic-layout>
-</template>
-
 <script lang="ts" setup>
-import Favicon from "@/components/Search/Favicon.vue";
-import BasicLayout from "@/layout/BasicLayout.vue";
-import { useWebsiteStore } from "@/store/modules/website";
-import { reactive, Ref, ref } from "@vue/reactivity";
-import { onMounted, onUnmounted } from "@vue/runtime-core";
-
+import { onMounted, onUnmounted } from '@vue/runtime-core';
+import { useWebsiteStore } from '~/store/website';
 
 const keys = [
-  ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"],
-  ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
-  ["A", "S", "D", "F", "G", "H", "J", "K", "L"],
-  ["Z", "X", "C", "V", "B", "N", "M"],
-];
+  ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'],
+  ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
+  ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
+  ['Z', 'X', 'C', 'V', 'B', 'N', 'M'],
+]
 
-const refKeys: any = reactive({});
-// ？？--默认参数由来
+const refKeys: any = reactive({})
+
 const setRefs = (e: HTMLElement) => {
-  if (e) refKeys[e.innerText.trim()] = e;
-};
-const space: Ref<any> = ref(null);
-const editable = ref(false);
+  if (e)
+    refKeys[e.innerText.trim()] = e
+}
+const space: Ref<any> = ref(null)
+const editable = ref(false)
 const websiteStore = useWebsiteStore()
-const hotkeys = websiteStore.getHotKeys;
+const hotkeys = websiteStore.getHotKeys
 const onClick = (k: string) => {
   if (!editable.value && hotkeys[k])
-    window.open(hotkeys[k].url);
-};
+    window.open(hotkeys[k].url)
+}
 
 const pressKey = (e) => {
-  let key = e.key.toUpperCase();
+  const key = e.key.toUpperCase()
   if (!editable.value && /^[\dA-Z]$/.test(key))
-    refKeys[key].className = "press";
-  if (e.code === "Space") {
-    e.preventDefault();
-    space.value.classList.add("press");
+    refKeys[key].className = 'press'
+  if (e.code === 'Space') {
+    e.preventDefault()
+    space.value.classList.add('press')
     //  Edit Mode
-    editable.value = !editable.value;
-    window.$message.success(`${editable.value ? "Open" : "Close"} Edit mode`);
+    editable.value = !editable.value
+    window.$message.success(`${editable.value ? 'Open' : 'Close'} Edit mode`)
   }
-};
+}
 
 onMounted(() => {
-  document.addEventListener("keydown", pressKey);
+  document.addEventListener('keydown', pressKey)
   document.onkeyup = function (e) {
-    let key = e.key.toUpperCase();
-    if (/^[\dA-Z]$/.test(key)) refKeys[key].className = "";
-    space.value.classList.remove("press");
+    const key = e.key.toUpperCase()
+    if (/^[\dA-Z]$/.test(key))
+      refKeys[key].className = ''
+    space.value.classList.remove('press')
     if (!editable.value && hotkeys[key])
-      window.open(hotkeys[key].url);
-  };
-});
+      window.open(hotkeys[key].url)
+  }
+})
 
 onUnmounted(() => {
-  document.removeEventListener("keydown", pressKey);
-  document.onkeyup = null;
-});
-
+  document.removeEventListener('keydown', pressKey)
+  document.onkeyup = null
+})
 </script>
+
+<template>
+  <div class="container">
+    <div v-for="row_keys in keys" :key="row_keys" class="row">
+      <button v-for="key in row_keys" :key="key" :ref="setRefs" @click="onClick(key)">
+        <favicon v-if="hotkeys[key]" class="fav" :src="hotkeys[key].url" :text="hotkeys[key].name" />
+        {{ key }}
+      </button>
+    </div>
+    <button ref="space" class="space">
+      Space
+    </button>
+  </div>
+</template>
 
 <style scoped>
 * {

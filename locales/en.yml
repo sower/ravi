@@ -1,0 +1,10 @@
+﻿navigation: Navigation
+en: English
+zh-CN: 中文
+
+header:
+  keyboard-mode: Keyboard Mode
+  search-mode: Search Mode
+  hothub: Hothub
+
+Hello: Hello, guest!

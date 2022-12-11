@@ -1,50 +1,28 @@
-<template>
-  <n-h4 prefix="bar" class="ml-1 max-w-[90%]" @click="openInput">
-    <n-input v-model:value="groupTitle" type="text" :status="inputStatus" maxlength="10" minlength="1" autofocus
-      @blur="saveTitle" clearable v-if="showInput" />
-    <n-text strong v-else>
-      {{ group.title }}
-    </n-text>
-  </n-h4>
-  <n-grid :x-gap="8" :y-gap="8" :cols="3" style="max-width: 400px">
-    <n-grid-item v-for="site in group.sites" @contextmenu="handleContextMenu(site, $event)">
-      <div class="square" @click="openUrl(site.url)">
-        <n-ellipsis style="max-width: 6em">
-          {{ site.name }}
-        </n-ellipsis>
-
-      </div>
-    </n-grid-item>
-  </n-grid>
-
-
-</template>
-
-
 <script setup lang="ts">
-import { useWebsiteStore } from '@/store/modules/website';
-import { inject, nextTick, PropType, ref } from 'vue';
+import type { PropType } from 'vue';
+import { inject, nextTick, ref } from 'vue';
+import { useWebsiteStore } from '~/store/website';
 
 interface Site {
-  id: number;
-  name: string;
-  url: string;
-  shortcut: string;
-  [key: string]: any;
+  id: number
+  name: string
+  url: string
+  shortcut: string
+  [key: string]: any
 }
 
 interface Group {
-  id: number;
-  title: string;
-  sites: Array<Site>;
+  id: number
+  title: string
+  sites: Array<Site>
 }
 
 const props = defineProps({
   group: {
     type: Object as PropType<Group>,
-    required: true
+    required: true,
   },
-  callback: Function as PropType<(id: number) => void>
+  callback: Function as PropType<(id: number) => void>,
 })
 
 function openUrl(url: string) {
@@ -53,8 +31,8 @@ function openUrl(url: string) {
 
 const websiteStore = useWebsiteStore()
 
-let groupTitle = ref(props.group.title)
-let inputStatus = ref('success')
+const groupTitle = ref(props.group.title)
+const inputStatus = ref('success')
 const showInput = ref(false)
 
 function openInput(e: MouseEvent) {
@@ -71,16 +49,16 @@ function openSites(e: MouseEvent) {
 function saveTitle() {
   if (groupTitle.value.trim().length === 0) {
     inputStatus.value = 'error'
-    window.$message.warning('The input cannot be blank');
+    window.$message.warning('The input cannot be blank')
     return
   }
   showInput.value = false
   websiteStore.setTitle(props.group.id, groupTitle.value)
 }
 
-let editable = inject<boolean>('editable')
-let positionX = inject<number>('positionX')
-let positionY = inject<number>('positionY')
+const editable = inject<boolean>('editable')
+const positionX = inject<number>('positionX')
+const positionY = inject<number>('positionY')
 
 function handleContextMenu(site: Site, event: MouseEvent) {
   event.preventDefault()
@@ -92,9 +70,26 @@ function handleContextMenu(site: Site, event: MouseEvent) {
     websiteStore.setCurrentSite(site)
   })
 }
-
 </script>
 
+<template>
+  <n-h4 prefix="bar" class="ml-1 max-w-[90%]" @click="openInput">
+    <n-input v-if="showInput" v-model:value="groupTitle" type="text" :status="inputStatus" maxlength="10" minlength="1"
+      autofocus clearable @blur="saveTitle" />
+    <n-text v-else strong>
+      {{ group.title }}
+    </n-text>
+  </n-h4>
+  <n-grid :x-gap="8" :y-gap="8" :cols="3" style="max-width: 400px">
+    <n-grid-item v-for="site in group.sites" :key="group.id" @contextmenu="handleContextMenu(site, $event)">
+      <div class="square" @click="openUrl(site.url)">
+        <n-ellipsis style="max-width: 6em">
+          {{ site.name }}
+        </n-ellipsis>
+      </div>
+    </n-grid-item>
+  </n-grid>
+</template>
 
 <style scoped>
 .square {
