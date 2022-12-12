@@ -2,6 +2,7 @@
 import type { PropType } from 'vue';
 import { inject, nextTick, ref } from 'vue';
 import { useWebsiteStore } from '~/store/website';
+import { openUrl } from '~/utils/common';
 
 interface Site {
   id: number
@@ -24,10 +25,6 @@ const props = defineProps({
   },
   callback: Function as PropType<(id: number) => void>,
 })
-
-function openUrl(url: string) {
-  window.open(url)
-}
 
 const websiteStore = useWebsiteStore()
 
@@ -80,7 +77,7 @@ function handleContextMenu(site: Site, event: MouseEvent) {
       {{ group.title }}
     </n-text>
   </n-h4>
-  <n-grid :x-gap="8" :y-gap="8" :cols="3" style="max-width: 400px">
+  <n-grid :x-gap="8" :y-gap="8" :cols="3" class="max-w-[400px]">
     <n-grid-item v-for="site in group.sites" :key="group.id" @contextmenu="handleContextMenu(site, $event)">
       <div class="square" @click="openUrl(site.url)">
         <n-ellipsis style="max-width: 6em">

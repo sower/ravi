@@ -40,6 +40,6 @@
     "vite-plugin-vue-component-preview": "^0.3.3",
     "vite-plugin-vue-layouts": "^0.7.0",
     "vite-ssg": "^0.22.0",
-    "vue-tsc": "^1.0.12"
+    "vue-tsc": "^1.0.13"
   }
 }

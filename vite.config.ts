@@ -14,6 +14,7 @@ import Preview from 'vite-plugin-vue-component-preview'
 import Layouts from 'vite-plugin-vue-layouts'
 
 export default defineConfig({
+  base: '/',
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
@@ -84,29 +85,24 @@ export default defineConfig({
     // https://github.com/antfu/vite-plugin-pwa
     VitePWA({
       registerType: 'autoUpdate',
-      // includeAssets: ['favicon.svg', 'safari-pinned-tab.svg'],
+      includeAssets: ['favicon.svg'],
       manifest: {
         name: 'Ravi',
         short_name: 'Ravi',
         theme_color: '#ffffff',
-        // icons: [
-        //   {
-        //     src: '/pwa-192x192.png',
-        //     sizes: '192x192',
-        //     type: 'image/png',
-        //   },
-        //   {
-        //     src: '/pwa-512x512.png',
-        //     sizes: '512x512',
-        //     type: 'image/png',
-        //   },
-        //   {
-        //     src: '/pwa-512x512.png',
-        //     sizes: '512x512',
-        //     type: 'image/png',
-        //     purpose: 'any maskable',
-        //   },
-        // ],
+        icons: [
+          {
+            src: '/logo.png',
+            sizes: '1500x1687',
+            type: 'image/png',
+          },
+          {
+            src: '/logo.png',
+            sizes: '1500x1687',
+            type: 'image/png',
+            purpose: 'any maskable',
+          },
+        ],
       },
     }),
 

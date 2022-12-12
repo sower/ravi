@@ -11,7 +11,8 @@ declare module '@vue/runtime-core' {
     Application: typeof import('./components/Application/Application.vue')['default']
     Bar: typeof import('./components/Search/Bar.vue')['default']
     DialogContent: typeof import('./components/DialogContent/index.vue')['default']
-    Drawer: typeof import('./components/pages/Drawer.vue')['default']
+    DropdownApp: typeof import('./components/pages/Dropdown-App.vue')['default']
+    DropdownSearch: typeof import('./components/Search/Dropdown-Search.vue')['default']
     Favicon: typeof import('./components/Search/Favicon.vue')['default']
     Footer: typeof import('./components/Common/Footer.vue')['default']
     Grid: typeof import('./components/Grid/Grid.vue')['default']
@@ -55,10 +56,9 @@ declare module '@vue/runtime-core' {
     NText: typeof import('naive-ui')['NText']
     NThing: typeof import('naive-ui')['NThing']
     NTime: typeof import('naive-ui')['NTime']
-    Pages: typeof import('./components/pages/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    Search: typeof import('./components/Search/Search.vue')['default']
+    SearchPrompt: typeof import('./components/Search/Search-Prompt.vue')['default']
     Square: typeof import('./components/Grid/Square.vue')['default']
   }
 }

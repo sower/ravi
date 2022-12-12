@@ -3,7 +3,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <n-layout-footer text-center op-70 mt-sm>
+  <n-layout-footer text-center op-70 m-2>
     ©2022-PRESENT Ravi {{ t("navigation") }}
   </n-layout-footer>
 </template>

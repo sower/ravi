@@ -17,8 +17,8 @@ watch(props, (cur, pre) => {
 </script>
 
 <template>
-  <n-avatar v-if="showImg" size="small" color="white" :src="getFavicon(src)" @error="showImg = false" />
-  <n-avatar v-else size="small" color="#18A058">
+  <n-avatar v-if="showImg" size="medium" color="white" :src="getFavicon(src)" @error="showImg = false" />
+  <n-avatar v-else size="medium" color="#18A058">
     {{ text.slice(0, 2) }}
   </n-avatar>
 </template>

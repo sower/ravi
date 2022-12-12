@@ -70,19 +70,13 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-* {
-  margin: 0;
-  padding: 0;
-  /* font-family: "Frutiger Helvetica sans-serif"; */
-}
-
 .container {
   /* background-color: #cccccc; */
   border: ridge medium #cccccc;
   padding: 2vmax;
   width: 85vmax;
   height: auto;
-  margin: 10px auto;
+  margin: 25px auto;
   border-radius: 10px;
   display: flex;
   justify-content: space-around;

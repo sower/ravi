@@ -39,43 +39,43 @@ function hello() {
 </script>
 
 <template>
-  <n-layout-header>
+  <n-layout-header pb-1>
     <n-space align="center" justify="space-around" size="large">
       <n-space text-2xl align="center" justify="space-around">
         <div text-3xl i-ravi-fav />
         <router-link to="/">
-          <h1 class="color-#18a058">
+          <h1 class="color-#18a058 hover:color-#36ad6a">
             Ravi
           </h1>
         </router-link>
       </n-space>
 
       <n-space text-4 font-bold justify="space-around">
-        <router-link to="/keyboard">
+        <router-link to="/keyboard" theme-color>
           {{ t("header.keyboard-mode") }}
         </router-link>
         <n-divider vertical />
-        <router-link to="/search">
+        <router-link to="/search" theme-color>
           {{ t("header.search-mode") }}
         </router-link>
         <n-divider vertical />
-        <router-link to="/hothub">
+        <router-link to="/hothub" theme-color>
           {{ t("header.hothub") }}
         </router-link>
       </n-space>
 
       <n-space text-xl font-medium align="center" justify="space-around">
-        <div cursor-pointer i-carbon-user @click="hello" />
+        <div theme-color cursor-pointer i-carbon-user @click="hello" />
         <router-link to="/Settings">
-          <div i="carbon-settings" />
+          <div theme-color i="carbon-settings" />
         </router-link>
         <n-dropdown trigger="hover" :options="getLanguageList()" @select="changeLanguage">
-          <div i-carbon:ibm-watson-language-translator />
+          <div theme-color i-carbon:ibm-watson-language-translator />
         </n-dropdown>
 
         <n-text cursor-pointer @click="changeTheme">
-          <div v-if="settingStore.theme" i-carbon-moon />
-          <div v-else i="carbon-sun" />
+          <div v-if="settingStore.theme" theme-color i-carbon-moon />
+          <div v-else theme-color i="carbon-sun" />
         </n-text>
       </n-space>
     </n-space>

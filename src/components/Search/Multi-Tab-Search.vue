@@ -1,105 +1,78 @@
 <script setup lang="ts">
-import type { VNodeChild } from 'vue';
-import { getSearchPrompt } from '~/utils/requests';
+import defaultEngines from '~/store/config/searchEngines.json';
 
-const searchEngines = {
-  general: [
-    {
-      label: 'Google',
-      key: 'https://google.com',
-    },
-    {
-      label: 'Bing',
-      key: 'https://cn.bing.com',
-    },
-    {
-      label: 'Baidu',
-      key: 'https://www.baidu.com',
-      query: 's?wd=',
-    },
-  ],
+const searchEngines = useStorage('searchEngines', defaultEngines)
+
+const { engineList } = searchEngines.value
+
+const engineType = searchEngines.value.engineType.filter(e => e[2])
+
+const selectEngineType = useStorage('selectEngineType', 'web')
+
+function switchTab(value: string) {
+  selectEngineType.value = value
 }
 
-const searchKey = ref('')
-const searchPrompt: Ref<any> = ref([])
-
-const dataRef: any = reactive({ currentEngine: searchEngines[1] })
-// const currentEngine: DropdownOption | any = toRef(dataRef, 'currentEngine');
-
-function setSearchEngine(key: string | number, option: DropdownOption) {
-  dataRef.currentEngine = option
+function initEngines() {
+  const engines = {}
+  for (const eType of engineType) {
+    const typeName = eType[1]
+    engines[typeName] = engineList[typeName].filter(engine => engine?.checked).map(engine => engine.url)
+  }
+  return engines
 }
 
-// label
-function getShow(searchLabel: string) {
-  return searchLabel.trim() !== ''
+const selectEngines = useStorage('selectEngines', initEngines())
+
+function checkTag(engine) {
+  if (engine?.checked) {
+    engine.checked = false
+    selectEngines.value[selectEngineType.value].pop(engine.url)
+    return
+  }
+  engine.checked = true
+  selectEngines.value[selectEngineType.value].push(engine.url)
 }
 
 // value
 function onSearch(searchValue: string) {
-  const searchLabel = searchPrompt.value[parseInt(searchValue)].label
-  window.open(
-    `${dataRef.currentEngine.key}/${dataRef.currentEngine.query || 'search?q='
-    }${searchLabel}`,
-  )
+  const currentEngines = selectEngines.value[selectEngineType.value]
+  if (currentEngines.length > 0) {
+    currentEngines.forEach((url) => {
+      window.open(url.replaceAll('%s', searchValue))
+    })
+  }
+  else {
+    window.$message.warning('请先选择搜索引擎')
+  }
 }
-
-function renderLabel(option: SelectOption): VNodeChild {
-  return [
-    h(Bar, { index: option.value, content: option.label }),
-  ]
-}
-
-watch(searchKey, (cur, pre) => {
-  if (cur.trim().length === 0)
-    return
-  getSearchPrompt(cur.trim()).then((array) => {
-    let prompts = [{ label: cur, value: '0' }]
-    if (array) {
-      prompts = prompts.concat(array.map((e: string, index: number) => {
-        return {
-          label: e,
-          value: String(index + 1),
-        }
-      }))
-    }
-    searchPrompt.value = prompts
-  }).catch(e => console.log(e))
-})
 </script>
 
 <template>
+  <div m-7 flex justify-center align-center>
+    <n-gradient-text :size="36" type="success">
+      Search
+    </n-gradient-text>
+    <div text-4xl ml-4 class="i-carbon:search-advanced" />
+  </div>
+
   <div class="w-[85%] mx-auto">
-    <n-tabs class="mx-auto" default-value="oasis" justify-content="space-evenly" size="large" type="bar">
-      <n-tab-pane name="oasis" tab="通用" />
-      <n-tab-pane name="the beatles" tab="社交" />
-      <n-tab-pane name="jay chou" tab="其他" />
+    <n-tabs class="mx-auto" justify-content="space-evenly" size="large" type="bar" :default-value="selectEngineType"
+      animated @update:value="switchTab">
+      <n-tab-pane v-for="item in engineType" :key="item" :name="item[1]" :tab="item[0]" />
     </n-tabs>
 
     <div class="w-[90%] mx-auto">
-      <n-auto-complete v-model:value="searchKey" :input-props="{ maxlength: '10' }" :options="searchPrompt"
-        blur-after-select clearable :render-label="renderLabel" placeholder="Search ..." @get-show="getShow">
-        <template #suffix>
-          <div i-carbon-search />
-        </template>
-      </n-auto-complete>
+      <search-prompt :do-search="onSearch" />
     </div>
 
     <n-space justify="space-around" class="my-8">
-      <n-tag :bordered="false">
-        爱在西元前
-      </n-tag>
-      <n-tag :bordered="false" type="success">
-        不该
-      </n-tag>
-      <n-tag :bordered="false" type="warning">
-        超人不会飞
-      </n-tag>
-      <n-tag :bordered="false" type="error">
-        手写的从前
-      </n-tag>
-      <n-tag :bordered="false" type="info">
-        哪里都是你
+      <n-tag v-for="engine in engineList[selectEngineType]" :key="engine" :bordered="false" checkable
+        :checked="engine.checked" round @click="checkTag(engine)">
+        {{ engine.name }}
+        <template #avatar>
+          <n-avatar color="white" :src="engine.favicon" />
+        </template>
       </n-tag>
     </n-space>
   </div>

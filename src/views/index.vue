@@ -4,7 +4,7 @@
 <template>
   <n-layout-content content-style="padding: 24px;">
     <div class="search-box">
-      <search />
+      <dropdown-search />
     </div>
     <grid />
   </n-layout-content>
