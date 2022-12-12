@@ -1,1 +1,1 @@
-{"name":"Ravi","short_name":"Ravi","start_url":"/","display":"standalone","background_color":"#ffffff","lang":"en","scope":"/","theme_color":"#ffffff"}
+{"name":"Ravi","short_name":"Ravi","start_url":"/ravi/","display":"standalone","background_color":"#ffffff","lang":"en","scope":"/ravi/","theme_color":"#ffffff","icons":[{"src":"/logo.png","sizes":"1500x1687","type":"image/png"},{"src":"/logo.png","sizes":"1500x1687","type":"image/png","purpose":"any maskable"}]}
