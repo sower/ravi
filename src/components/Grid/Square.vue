@@ -1,26 +1,15 @@
 <script setup lang="ts">
-import type { PropType } from 'vue';
-import { inject, nextTick, ref } from 'vue';
-import { useWebsiteStore } from '~/store/website';
-import { openUrl } from '~/utils/common';
-
-interface Site {
-  id: number
-  name: string
-  url: string
-  shortcut: string
-  [key: string]: any
-}
-
-interface Group {
-  id: number
-  title: string
-  sites: Array<Site>
-}
+import { onClickOutside } from '@vueuse/core'
+import type { PropType } from 'vue'
+import { inject, nextTick, ref } from 'vue'
+import type { Site } from '~/store/types'
+import { useWebsiteStore } from '~/store/website'
+import { openUrl } from '~/utils/common'
 
 const props = defineProps({
-  group: {
-    type: Object as PropType<Group>,
+  title: String,
+  sites: {
+    type: Object as PropType<Array<Site>>,
     required: true,
   },
   callback: Function as PropType<(id: number) => void>,
@@ -28,40 +17,47 @@ const props = defineProps({
 
 const websiteStore = useWebsiteStore()
 
-const groupTitle = ref(props.group.title)
+// 存储与展示分离
+const titleName = ref(props.title)
+
 const inputStatus = ref('success')
 const showInput = ref(false)
 
 function openInput(e: MouseEvent) {
   e.preventDefault()
   showInput.value = true
-  // groupTitle.value =props.group.title
-}
-
-function openSites(e: MouseEvent) {
-  e.preventDefault()
-  props.group.sites.forEach(site => openUrl(site.url))
 }
 
 function saveTitle() {
-  if (groupTitle.value.trim().length === 0) {
+  if (titleName.value?.trim().length === 0) {
     inputStatus.value = 'error'
     window.$message.warning('The input cannot be blank')
     return
   }
+  inputStatus.value = 'success'
   showInput.value = false
-  websiteStore.setTitle(props.group.id, groupTitle.value)
+  websiteStore.setTitle(props.title, titleName.value)
+  window.$message.success('Save successfully')
 }
 
-const editable = inject<boolean>('editable')
+// 失焦即保存
+const target = ref(null)
+onClickOutside(target, event => saveTitle())
+
+function openSites(e: MouseEvent) {
+  e.preventDefault()
+  props.sites.forEach(site => openUrl(site.url))
+}
+
+const showContext = inject<boolean>('showContext')
 const positionX = inject<number>('positionX')
 const positionY = inject<number>('positionY')
 
 function handleContextMenu(site: Site, event: MouseEvent) {
   event.preventDefault()
-  editable.value = false
+  showContext.value = false
   nextTick().then(() => {
-    editable.value = true
+    showContext.value = true
     positionX.value = event.clientX
     positionY.value = event.clientY
     websiteStore.setCurrentSite(site)
@@ -71,16 +67,17 @@ function handleContextMenu(site: Site, event: MouseEvent) {
 
 <template>
   <n-h4 prefix="bar" class="ml-1 max-w-[90%]" @click="openInput">
-    <n-input v-if="showInput" v-model:value="groupTitle" type="text" :status="inputStatus" maxlength="10" minlength="1"
-      autofocus clearable @blur="saveTitle" />
+    <n-input v-if="showInput" ref="target" v-model:value="titleName" type="text" :status="inputStatus" maxlength="10"
+      minlength="1" autofocus clearable />
     <n-text v-else strong>
-      {{ group.title }}
+      {{ titleName }}
     </n-text>
   </n-h4>
   <n-grid :x-gap="8" :y-gap="8" :cols="3" class="max-w-[400px]">
-    <n-grid-item v-for="site in group.sites" :key="group.id" @contextmenu="handleContextMenu(site, $event)">
+    <n-grid-item v-for="(site, index) in sites" :key="site.id"
+      @contextmenu="handleContextMenu({ ...site, index, group: title }, $event)">
       <div class="square" @click="openUrl(site.url)">
-        <n-ellipsis style="max-width: 6em">
+        <n-ellipsis max-w-sm>
           {{ site.name }}
         </n-ellipsis>
       </div>

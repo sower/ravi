@@ -1,11 +1,15 @@
 export interface Site {
-  id: number
   name: string
   url: string
   shortcut: string
+  index?: number
+  [key: string]: any
 }
-export interface Website {
-  id: number
-  title: string
-  sites: Array<Site>
+
+export interface Engine {
+  favicon: string
+  name: string
+  url: string
+  checked?: boolean
+  [key: string]: any
 }

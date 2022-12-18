@@ -1,542 +1,425 @@
-[
-  {
-    "id": 10,
-    "title": "Email",
-    "sites": [
-      {
-        "id": 11,
-        "name": "网易163",
-        "url": "https://mail.163.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 12,
-        "name": "网易126",
-        "url": "https://mail.126.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 13,
-        "name": "QQ邮箱",
-        "url": "http://mail.qq.com",
-        "shortcut": ""
-      },
-      {
-        "id": 14,
-        "name": "新浪邮箱",
-        "url": "https://mail.sina.com.cn",
-        "shortcut": ""
-      },
-      {
-        "id": 15,
-        "name": "Moakt",
-        "url": "https://www.moakt.com",
-        "shortcut": ""
-      },
-      {
-        "id": 16,
-        "name": "Temp-mail",
-        "url": "https://temp-mail.org/",
-        "shortcut": ""
-      },
-      {
-        "id": 17,
-        "name": "Gmail",
-        "url": "http://gmail.com",
-        "shortcut": ""
-      },
-      {
-        "id": 18,
-        "name": "Zoho",
-        "url": "https://www.zoho.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 19,
-        "name": "Outlook",
-        "url": "https://mail.live.com/",
-        "shortcut": ""
-      }
-    ]
-  },
-  {
-    "id": 20,
-    "title": "Social",
-    "sites": [
-      {
-        "id": 21,
-        "name": "知乎",
-        "url": "http://www.zhihu.com",
-        "shortcut": "Z"
-      },
-      {
-        "id": 22,
-        "name": "微博",
-        "url": "http://weibo.com",
-        "shortcut": ""
-      },
-      {
-        "id": 23,
-        "name": "豆瓣",
-        "url": "http://www.douban.com",
-        "shortcut": "D"
-      },
-      {
-        "id": 24,
-        "name": "微信",
-        "url": "https://wx.qq.com",
-        "shortcut": ""
-      },
-      {
-        "id": 25,
-        "name": "语雀",
-        "url": "https://www.yuque.com/dashboard",
-        "shortcut": ""
-      },
-      {
-        "id": 26,
-        "name": "简书",
-        "url": "http://www.jianshu.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 27,
-        "name": "Facebook",
-        "url": "https://www.facebook.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 28,
-        "name": "GitHub",
-        "url": "https://github.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 29,
-        "name": "Twitter",
-        "url": "https://twitter.com/",
-        "shortcut": ""
-      }
-    ]
-  },
-  {
-    "id": 30,
-    "title": "Software",
-    "sites": [
-      {
-        "id": 31,
-        "name": "果核剥壳",
-        "url": "https://www.ghxi.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 32,
-        "name": "大眼仔旭",
-        "url": "http://www.dayanzai.me",
-        "shortcut": ""
-      },
-      {
-        "id": 33,
-        "name": "软件NO.1",
-        "url": "http://www.rjno1.com",
-        "shortcut": ""
-      },
-      {
-        "id": 34,
-        "name": "423Down",
-        "url": "https://www.423down.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 35,
-        "name": "飞扬时空",
-        "url": "http://iyoung.ysepan.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 36,
-        "name": "异次元软件",
-        "url": "https://www.iplaysoft.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 37,
-        "name": "Amazing",
-        "url": "https://amazing-apps.gitbook.io/windows-apps-that-amaze-us/zh-cn/",
-        "shortcut": ""
-      },
-      {
-        "id": 38,
-        "name": "Portableapps",
-        "url": "https://portableapps.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 39,
-        "name": "Softpedia",
-        "url": "https://www.softpedia.com/dyn-search.php?search_term=portable",
-        "shortcut": ""
-      }
-    ]
-  },
-  {
-    "id": 40,
-    "title": "Blog",
-    "sites": [
-      {
-        "id": 41,
-        "name": "虫部落",
-        "url": "https://www.chongbuluo.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 42,
-        "name": "吾爱破解",
-        "url": "https://www.52pojie.cn/",
-        "shortcut": ""
-      },
-      {
-        "id": 43,
-        "name": "不死鸟",
-        "url": "https://iui.su/",
-        "shortcut": ""
-      },
-      {
-        "id": 44,
-        "name": "直播吧",
-        "url": "https://www.zhibo8.cc/",
-        "shortcut": ""
-      },
-      {
-        "id": 45,
-        "name": "今日热榜",
-        "url": "https://tophub.today/",
-        "shortcut": ""
-      },
-      {
-        "id": 46,
-        "name": "阮一峰",
-        "url": "http://www.ruanyifeng.com/blog/",
-        "shortcut": ""
-      },
-      {
-        "id": 47,
-        "name": "Slant",
-        "url": "https://www.slant.co/",
-        "shortcut": ""
-      },
-      {
-        "id": 48,
-        "name": "Topbook",
-        "url": "http://topbook.cc/",
-        "shortcut": ""
-      },
-      {
-        "id": 49,
-        "name": "Runningcheese",
-        "url": "https://www.runningcheese.com/",
-        "shortcut": ""
-      }
-    ]
-  },
-  {
-    "id": 50,
-    "title": "Video",
-    "sites": [
-      {
-        "id": 51,
-        "name": "腾讯视频",
-        "url": "http://v.qq.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 52,
-        "name": "爱奇艺",
-        "url": "http://www.iqiyi.com",
-        "shortcut": ""
-      },
-      {
-        "id": 53,
-        "name": "优酷",
-        "url": "http://www.youku.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 54,
-        "name": "芒果TV",
-        "url": "https://www.mgtv.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 55,
-        "name": "BiliBili",
-        "url": "http://www.bilibili.com/",
-        "shortcut": "B"
-      },
-      {
-        "id": 56,
-        "name": "MVCAT",
-        "url": "http://www.mvcat.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 57,
-        "name": "低端影视",
-        "url": "http://ddys.tv",
-        "shortcut": ""
-      },
-      {
-        "id": 58,
-        "name": "Youtube",
-        "url": "https://www.youtube.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 59,
-        "name": "场库",
-        "url": "https://www.xinpianchang.com/channel",
-        "shortcut": ""
-      }
-    ]
-  },
-  {
-    "id": 60,
-    "title": "Cloud Storage",
-    "sites": [
-      {
-        "id": 61,
-        "name": "百度网盘",
-        "url": "https://pan.baidu.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 62,
-        "name": "腾讯微云",
-        "url": "https://www.weiyun.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 63,
-        "name": "阿里云盘",
-        "url": "https://www.aliyundrive.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 64,
-        "name": "坚果云",
-        "url": "https://www.jianguoyun.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 65,
-        "name": "蓝奏云",
-        "url": "http://www.lanzou.com",
-        "shortcut": ""
-      },
-      {
-        "id": 66,
-        "name": "文叔叔",
-        "url": "https://www.wenshushu.cn/",
-        "shortcut": ""
-      },
-      {
-        "id": 67,
-        "name": "OneDrive",
-        "url": "https://onedrive.live.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 68,
-        "name": "GoogleDrive",
-        "url": "https://drive.google.com/drive/",
-        "shortcut": ""
-      },
-      {
-        "id": 69,
-        "name": "Dropbox",
-        "url": "https://www.dropbox.com/",
-        "shortcut": ""
-      }
-    ]
-  },
-  {
-    "id": 70,
-    "title": "在线协作",
-    "sites": [
-      {
-        "id": 71,
-        "name": "Office",
-        "url": "https://www.office.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 72,
-        "name": "Diagrams",
-        "url": "https://app.diagrams.net/",
-        "shortcut": ""
-      },
-      {
-        "id": 73,
-        "name": "腾讯问卷",
-        "url": "https://wj.qq.com",
-        "shortcut": ""
-      },
-      {
-        "id": 74,
-        "name": "石墨文档",
-        "url": "https://shimo.im/",
-        "shortcut": ""
-      },
-      {
-        "id": 75,
-        "name": "腾讯文档",
-        "url": "https://docs.qq.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 76,
-        "name": "微云文档",
-        "url": "https://doc.weiyun.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 77,
-        "name": "幕布",
-        "url": "https://mubu.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 78,
-        "name": "Processon",
-        "url": "https://www.processon.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 79,
-        "name": "百度脑图",
-        "url": "http://naotu.baidu.com/",
-        "shortcut": ""
-      }
-    ]
-  },
-  {
-    "id": 80,
-    "title": "Overseas",
-    "sites": [
-      {
-        "id": 81,
-        "name": "Quora",
-        "url": "http://www.quora.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 82,
-        "name": "Pinterest",
-        "url": "https://www.pinterest.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 83,
-        "name": "Instagram",
-        "url": "https://instagram.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 84,
-        "name": "Wikipedia",
-        "url": "https://www.wikipedia.org/",
-        "shortcut": ""
-      },
-      {
-        "id": 85,
-        "name": "Pinterest",
-        "url": "https://pinterest.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 86,
-        "name": "Stackoverflow",
-        "url": "http://stackoverflow.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 87,
-        "name": "Wikihow",
-        "url": "https://zh.wikihow.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 88,
-        "name": "Reddit",
-        "url": "http://www.reddit.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 89,
-        "name": "AlternativeTo",
-        "url": "https://alternativeto.net/",
-        "shortcut": ""
-      }
-    ]
-  },
-  {
-    "id": 90,
-    "title": "Tools",
-    "sites": [
-      {
-        "id": 91,
-        "name": "有道翻译",
-        "url": "http://fanyi.youdao.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 92,
-        "name": "Table Convert",
-        "url": "https://tableconvert.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 93,
-        "name": "iLovePDF",
-        "url": "https://www.ilovepdf.com",
-        "shortcut": ""
-      },
-      {
-        "id": 94,
-        "name": "百度识图",
-        "url": "http://image.baidu.com/?fr=shitu",
-        "shortcut": ""
-      },
-      {
-        "id": 95,
-        "name": "Bigjpg",
-        "url": "http://bigjpg.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 96,
-        "name": "Photopea",
-        "url": "https://www.photopea.com/",
-        "shortcut": ""
-      },
-      {
-        "id": 97,
-        "name": "缩短网址",
-        "url": "https://suowo.cn/",
-        "shortcut": ""
-      },
-      {
-        "id": 98,
-        "name": "跑马灯",
-        "url": "https://tool.retiehe.com/marquee",
-        "shortcut": ""
-      },
-      {
-        "id": 99,
-        "name": "自由钢琴",
-        "url": "https://www.autopiano.cn/",
-        "shortcut": ""
-      }
-    ]
-  }
-]
+{
+  "Email": [
+    {
+      "name": "网易163",
+      "url": "https://mail.163.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "网易126",
+      "url": "https://mail.126.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "QQ邮箱",
+      "url": "http://mail.qq.com",
+      "shortcut": ""
+    },
+    {
+      "name": "新浪邮箱",
+      "url": "https://mail.sina.com.cn",
+      "shortcut": ""
+    },
+    {
+      "name": "Moakt",
+      "url": "https://www.moakt.com",
+      "shortcut": ""
+    },
+    {
+      "name": "Temp-mail",
+      "url": "https://temp-mail.org/",
+      "shortcut": ""
+    },
+    {
+      "name": "Gmail",
+      "url": "http://gmail.com",
+      "shortcut": ""
+    },
+    {
+      "name": "Zoho",
+      "url": "https://www.zoho.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "Outlook",
+      "url": "https://mail.live.com/",
+      "shortcut": ""
+    }
+  ],
+  "Sociality": [
+    {
+      "name": "知乎",
+      "url": "http://www.zhihu.com",
+      "shortcut": "Z"
+    },
+    {
+      "name": "微博",
+      "url": "http://weibo.com",
+      "shortcut": ""
+    },
+    {
+      "name": "豆瓣",
+      "url": "http://www.douban.com",
+      "shortcut": "D"
+    },
+    {
+      "name": "微信",
+      "url": "https://wx.qq.com",
+      "shortcut": ""
+    },
+    {
+      "name": "语雀",
+      "url": "https://www.yuque.com/dashboard",
+      "shortcut": ""
+    },
+    {
+      "name": "简书",
+      "url": "http://www.jianshu.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "Twitter",
+      "url": "https://twitter.com/",
+      "shortcut": ""
+    }
+  ],
+  "Life": [
+    {
+      "name": "12306",
+      "url": "https://www.12306.cn/index/",
+      "shortcut": ""
+    },
+    {
+      "name": "淘宝",
+      "url": "https://www.taobao.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "京东",
+      "url": "https://www.jd.com/",
+      "shortcut": ""
+    },
+    {
+      "name": " 高德地图",
+      "url": "https://ditu.amap.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "美团",
+      "url": "http://www.meituan.com/",
+      "shortcut": ""
+    },
+    {
+      "name": " 下厨房",
+      "url": "http://www.xiachufang.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "比一比价",
+      "url": "http://b1bj.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "什么值得买",
+      "url": "https://www.smzdm.com/",
+      "shortcut": ""
+    },
+    {
+      "name": " 西贴",
+      "url": "http://www.xitie.com/",
+      "shortcut": ""
+    }
+  ],
+  "在线协作": [
+    {
+      "name": "Office",
+      "url": "https://www.office.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "Diagrams",
+      "url": "https://app.diagrams.net/",
+      "shortcut": ""
+    },
+    {
+      "name": "腾讯问卷",
+      "url": "https://wj.qq.com",
+      "shortcut": ""
+    },
+    {
+      "name": "石墨文档",
+      "url": "https://shimo.im/",
+      "shortcut": ""
+    },
+    {
+      "name": "腾讯文档",
+      "url": "https://docs.qq.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "微云文档",
+      "url": "https://doc.weiyun.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "幕布",
+      "url": "https://mubu.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "Processon",
+      "url": "https://www.processon.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "百度脑图",
+      "url": "http://naotu.baidu.com/",
+      "shortcut": ""
+    }
+  ],
+  "Multimedia": [
+    {
+      "name": "腾讯视频",
+      "url": "http://v.qq.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "爱奇艺",
+      "url": "http://www.iqiyi.com",
+      "shortcut": ""
+    },
+    {
+      "name": "优酷",
+      "url": "http://www.youku.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "芒果TV",
+      "url": "https://www.mgtv.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "BiliBili",
+      "url": "http://www.bilibili.com/",
+      "shortcut": "B"
+    },
+    {
+      "name": "Youtube",
+      "url": "https://www.youtube.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "QQ音乐",
+      "url": "https://y.qq.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "网易云音乐",
+      "url": "https://music.163.com/",
+      "shortcut": ""
+    },
+    {
+      "name": " 酷狗",
+      "url": "http://www.kugou.com/",
+      "shortcut": ""
+    }
+  ],
+  "Image": [
+    {
+      "name": "Wallhaven",
+      "url": "https://wallhaven.cc/",
+      "shortcut": ""
+    },
+    {
+      "name": "Wallpapers",
+      "url": "http://papers.co/",
+      "shortcut": ""
+    },
+    {
+      "name": "Wallhere",
+      "url": "https://wallhere.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "天地图",
+      "url": "http://www.tianditu.gov.cn/",
+      "shortcut": ""
+    },
+    {
+      "name": "D-Maps",
+      "url": "https://d-maps.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "观沧海",
+      "url": "https://www.ageeye.cn/",
+      "shortcut": ""
+    },
+    {
+      "name": "Unsplash",
+      "url": "https://unsplash.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "Pexels",
+      "url": "https://www.pexels.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "ColorHub",
+      "url": "https://colorhub.me/",
+      "shortcut": ""
+    }
+  ],
+  "Blog": [
+    {
+      "name": "虫部落",
+      "url": "https://www.chongbuluo.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "吾爱破解",
+      "url": "https://www.52pojie.cn/",
+      "shortcut": ""
+    },
+    {
+      "name": "不死鸟",
+      "url": "https://iui.su/",
+      "shortcut": ""
+    },
+    {
+      "name": "直播吧",
+      "url": "https://www.zhibo8.cc/",
+      "shortcut": ""
+    },
+    {
+      "name": "今日热榜",
+      "url": "https://tophub.today/",
+      "shortcut": ""
+    },
+    {
+      "name": "阮一峰",
+      "url": "http://www.ruanyifeng.com/blog/",
+      "shortcut": ""
+    },
+    {
+      "name": "Slant",
+      "url": "https://www.slant.co/",
+      "shortcut": ""
+    },
+    {
+      "name": "Topbook",
+      "url": "http://topbook.cc/",
+      "shortcut": ""
+    },
+    {
+      "name": "Runningcheese",
+      "url": "https://www.runningcheese.com/",
+      "shortcut": ""
+    }
+  ],
+  "Overseas": [
+    {
+      "name": "Quora",
+      "url": "http://www.quora.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "Pinterest",
+      "url": "https://www.pinterest.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "Instagram",
+      "url": "https://instagram.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "Wikipedia",
+      "url": "https://www.wikipedia.org/",
+      "shortcut": ""
+    },
+    {
+      "name": "Pinterest",
+      "url": "https://pinterest.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "Stackoverflow",
+      "url": "http://stackoverflow.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "Wikihow",
+      "url": "https://zh.wikihow.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "Reddit",
+      "url": "http://www.reddit.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "AlternativeTo",
+      "url": "https://alternativeto.net/",
+      "shortcut": ""
+    }
+  ],
+  "Tools": [
+    {
+      "name": "有道翻译",
+      "url": "http://fanyi.youdao.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "Table Convert",
+      "url": "https://tableconvert.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "iLovePDF",
+      "url": "https://www.ilovepdf.com",
+      "shortcut": ""
+    },
+    {
+      "name": "百度识图",
+      "url": "http://image.baidu.com/?fr=shitu",
+      "shortcut": ""
+    },
+    {
+      "name": "Bigjpg",
+      "url": "http://bigjpg.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "Photopea",
+      "url": "https://www.photopea.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "缩短网址",
+      "url": "https://suowo.cn/",
+      "shortcut": ""
+    },
+    {
+      "name": "跑马灯",
+      "url": "https://tool.retiehe.com/marquee",
+      "shortcut": ""
+    },
+    {
+      "name": "自由钢琴",
+      "url": "https://www.autopiano.cn/",
+      "shortcut": ""
+    }
+  ]
+}

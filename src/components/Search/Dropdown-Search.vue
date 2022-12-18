@@ -22,7 +22,6 @@ function setSearchEngine(key: string | number, option: DropdownOption) {
 
 // value
 function onSearch(searchValue: string) {
-  console.log(dataRef)
   window.open(dataRef.currentEngine.key.replaceAll('%s', searchValue))
 }
 </script>

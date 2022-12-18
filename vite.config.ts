@@ -123,6 +123,10 @@ export default defineConfig({
     script: 'async',
     formatting: 'minify',
   },
+  ssr: {
+    // TODO: workaround until they support native ESM
+    noExternal: ['workbox-window', /vue-i18n/],
+  },
 
   build: {
     chunkSizeWarningLimit: 1000,

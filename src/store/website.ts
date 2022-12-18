@@ -1,16 +1,10 @@
 import { defineStore } from 'pinia'
 import websites from './config/websites.json'
-import type { Site, Website } from './types'
+import type { Site } from './types'
 
 const storage = localStorage
 
-function getCoordinate(id: number) {
-  const x = Math.floor(id / 10) - 1
-  const y = id % 10 - 1
-  return { x, y }
-}
-
-function saveToStorage(websites: Array<Website>) {
+function saveToStorage(websites: Array<Site>) {
   storage.setItem('websites', JSON.stringify(websites))
 }
 
@@ -18,18 +12,18 @@ export const useWebsiteStore = defineStore({
   id: 'app-site',
   state: () => ({
     websites: JSON.parse(storage.getItem('websites')) || websites,
-    currentSite: { id: 0, name: '', url: '', shortcut: '' },
+    currentSite: { name: '', url: '', shortcut: '' },
     showModal: false,
   }),
   getters: {
     getHotKeys(): object {
-      const hotkeys = {}
-      this.websites.forEach((website: Website) => {
-        website.sites.forEach((site) => {
+      const hotkeys: any = {}
+      for (const key of Object.keys(this.websites)) {
+        this.websites[key].forEach((site: Site, index: number) => {
           if (site.shortcut)
-            hotkeys[site.shortcut] = site
+            hotkeys[site.shortcut] = { ...site, index, group: key }
         })
-      })
+      }
       return hotkeys
     },
   },
@@ -40,33 +34,32 @@ export const useWebsiteStore = defineStore({
     setShowModal(showModal: boolean) {
       this.showModal = showModal
     },
-    removeShortcut(site: Site) {
-      // solve hotkey confict
-      const { id } = site
-      const { x, y } = getCoordinate(id)
-      this.websites[x].sites[y].shortcut = null
-    },
-    setSites(site: Site) {
-      const { x, y } = getCoordinate(site.id)
-      const sites = this.websites[x].sites
-
+    setSite(site: Site) {
       // set new shortcut
       if (site.shortcut) {
         site.shortcut = site.shortcut.toUpperCase()
         const hotkeys = this.getHotKeys
         const preSite = hotkeys[site.shortcut]
-        if (preSite)
-          this.removeShortcut(preSite)
+        if (preSite) {
+          // solve hotkey confict
+          this.websites[preSite.group][preSite.index].shortcut = null
+        }
       }
-      sites[y] = site
+      const { group, index, ...newSite } = site
+      this.websites[group][index] = newSite
       saveToStorage(this.websites)
     },
-    setTitle(id: number, title: string) {
-      const { x } = getCoordinate(id)
-      this.websites[x].title = title
+    setTitle(title: string, newTitle: string) {
+      const websitesCopy: any = {}
+      for (const key of Object.keys(this.websites)) {
+        if (key === title)
+          websitesCopy[newTitle] = this.websites[key]
+        else websitesCopy[key] = this.websites[key]
+      }
+      this.websites = websitesCopy
       saveToStorage(this.websites)
     },
-    setWebsites(websites: Array<Website>) {
+    setWebsites(websites: Array<Site>) {
       this.websites = websites
       saveToStorage(websites)
     },

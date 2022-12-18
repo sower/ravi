@@ -5,10 +5,11 @@ import { openUrl } from '~/utils/common';
 const websiteStore = useWebsiteStore()
 const { websites } = storeToRefs(websiteStore)
 
-const options = websites.value.map((website) => {
-  return { label: website.title, key: website.id, sites: website.sites }
+const options = Object.keys(websites.value).map((group) => {
+  return { label: group, key: group, sites: websites.value[group] }
 })
 
+// default select group
 const selectGroup = ref(options[0].key)
 
 const currentGroup = computed(() => {
@@ -31,7 +32,7 @@ function handleSelect(key: string | number) {
       <div text-2xl class="i-carbon:caret-down" />
     </div>
   </n-dropdown>
-  <div max-w-80vw mx-auto mt-5xl mb-xs>
+  <div max-w-80vw mx-auto mt-5xl mb-2xl>
     <div flex="~ wrap" justify-around>
       <div v-for="site in currentGroup.sites" :key="site" class="hover:color-#18a058" m-2 flex="~ col" items-center
         cursor-pointer @click="openUrl(site.url)">

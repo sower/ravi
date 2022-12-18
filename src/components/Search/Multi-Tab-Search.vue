@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import defaultEngines from '~/store/config/searchEngines.json';
+import type { Engine } from '~/store/types';
 
 const searchEngines = useStorage('searchEngines', defaultEngines)
 
@@ -17,7 +18,7 @@ function initEngines() {
   const engines = {}
   for (const eType of engineType) {
     const typeName = eType[1]
-    engines[typeName] = engineList[typeName].filter(engine => engine?.checked).map(engine => engine.url)
+    engines[typeName] = engineList[typeName].filter((engine: Engine) => engine?.checked).map((engine: Engine) => engine.url)
   }
   return engines
 }
@@ -25,13 +26,14 @@ function initEngines() {
 const selectEngines = useStorage('selectEngines', initEngines())
 
 function checkTag(engine) {
+  const subSelects = selectEngines.value[selectEngineType.value]
   if (engine?.checked) {
     engine.checked = false
-    selectEngines.value[selectEngineType.value].pop(engine.url)
+    subSelects.pop(engine.url)
     return
   }
   engine.checked = true
-  selectEngines.value[selectEngineType.value].push(engine.url)
+  subSelects.push(engine.url)
 }
 
 // value
@@ -59,14 +61,14 @@ function onSearch(searchValue: string) {
   <div class="w-[85%] mx-auto">
     <n-tabs class="mx-auto" justify-content="space-evenly" size="large" type="bar" :default-value="selectEngineType"
       animated @update:value="switchTab">
-      <n-tab-pane v-for="item in engineType" :key="item" :name="item[1]" :tab="item[0]" />
+      <n-tab-pane v-for="item in engineType" :key="item[1]" :name="item[1]" :tab="item[0]" />
     </n-tabs>
 
     <div class="w-[90%] mx-auto">
-      <search-prompt :do-search="onSearch" />
+      <search-prompt :do-search="onSearch" size="large" />
     </div>
 
-    <n-space justify="space-around" class="my-8">
+    <n-space justify="space-around" class="mt-5 mb-8">
       <n-tag v-for="engine in engineList[selectEngineType]" :key="engine" :bordered="false" checkable
         :checked="engine.checked" round @click="checkTag(engine)">
         {{ engine.name }}
@@ -79,5 +81,15 @@ function onSearch(searchValue: string) {
 </template>
 
 <style scoped>
+:deep(.n-input) {
+  border-radius: 3rem;
+}
 
+:deep(.n-tabs .n-tab-pane) {
+  padding: 0;
+}
+
+:deep(.n-tabs .n-tabs-bar) {
+  height: 3px;
+}
 </style>

@@ -7,9 +7,14 @@ import { h, watch } from 'vue'
 import { getSearchPrompt } from '~/utils/requests'
 import Bar from './Bar.vue'
 
-const props = defineProps<{
+export interface Props {
   doSearch: onSearch
-}>()
+  size?: 'small' | 'medium' | 'large'
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  size: 'medium',
+})
 
 const searchKey = ref('')
 const searchPrompt: Ref<any> = ref([])
@@ -50,7 +55,7 @@ watch(searchKey, (cur, pre) => {
 </script>
 
 <template>
-  <n-auto-complete v-model:value="searchKey" :input-props="{ maxlength: '10' }" :options="searchPrompt"
+  <n-auto-complete v-model:value="searchKey" :input-props="{ maxlength: '10' }" :options="searchPrompt" :size="size"
     blur-after-select clearable :on-select="executeSearch" :render-label="renderLabel" placeholder="Search ..."
     @get-show="getShow">
     <template #suffix>
@@ -58,4 +63,3 @@ watch(searchKey, (cur, pre) => {
     </template>
   </n-auto-complete>
 </template>
-
