@@ -1,150 +1,45 @@
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans" id="htmlRoot" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
-  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
-  <meta content="webkit" name="renderer"/>
-  <meta
-    content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0"
-    name="viewport"
-  />
-  <link href="/ravi/favicon.svg" rel="icon"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/ravi/favicon.svg" rel="icon" />
   <title>Ravi</title>
-  <script type="module" crossorigin src="/ravi/assets/index.02f15612.js"></script>
+  <script type="module" crossorigin src="/ravi/assets/index.eaa0dab0.js"></script>
   <link rel="modulepreload" crossorigin href="/ravi/assets/@intlify.adb6fa1b.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/@vue.90996980.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/vue-i18n.4b6a3688.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/pinia.f339c344.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/axios.a2f4dec8.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/date-fns.14af0789.js">
+  <link rel="modulepreload" crossorigin href="/ravi/assets/@vue.8936e839.js">
+  <link rel="modulepreload" crossorigin href="/ravi/assets/vue-i18n.67d7ed8f.js">
+  <link rel="modulepreload" crossorigin href="/ravi/assets/pinia.2dff39de.js">
+  <link rel="modulepreload" crossorigin href="/ravi/assets/axios.d07afc41.js">
+  <link rel="modulepreload" crossorigin href="/ravi/assets/date-fns.a65ded87.js">
   <link rel="modulepreload" crossorigin href="/ravi/assets/evtd.9eee5233.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/vooks.54211525.js">
+  <link rel="modulepreload" crossorigin href="/ravi/assets/vooks.04193f27.js">
   <link rel="modulepreload" crossorigin href="/ravi/assets/treemate.80cdf2c2.js">
   <link rel="modulepreload" crossorigin href="/ravi/assets/seemly.815dc75a.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/@css-render.dfaf0f18.js">
+  <link rel="modulepreload" crossorigin href="/ravi/assets/@css-render.ecf224b2.js">
   <link rel="modulepreload" crossorigin href="/ravi/assets/vdirs.9b78243b.js">
   <link rel="modulepreload" crossorigin href="/ravi/assets/@juggle.32c34d6c.js">
   <link rel="modulepreload" crossorigin href="/ravi/assets/@emotion.6322e2ae.js">
   <link rel="modulepreload" crossorigin href="/ravi/assets/css-render.20ab466e.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/vueuc.5ce11644.js">
+  <link rel="modulepreload" crossorigin href="/ravi/assets/vueuc.130a384e.js">
   <link rel="modulepreload" crossorigin href="/ravi/assets/lodash-es.566cba93.js">
   <link rel="modulepreload" crossorigin href="/ravi/assets/async-validator.fb49d0f5.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/date-fns-tz.cb94cc8c.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/naive-ui.7dbcfddc.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/vue-router.d3924bae.js">
+  <link rel="modulepreload" crossorigin href="/ravi/assets/date-fns-tz.60c795ea.js">
+  <link rel="modulepreload" crossorigin href="/ravi/assets/naive-ui.fffdf306.js">
+  <link rel="modulepreload" crossorigin href="/ravi/assets/vue-router.fb34c92e.js">
   <link rel="modulepreload" crossorigin href="/ravi/assets/hookable.9d32b690.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/@unhead.64cbe4d7.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/@vueuse.7d411351.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/vite-ssg.c549846f.js">
-  <link rel="stylesheet" href="/ravi/assets/index.67795926.css">
+  <link rel="modulepreload" crossorigin href="/ravi/assets/@unhead.9d9441d6.js">
+  <link rel="modulepreload" crossorigin href="/ravi/assets/@vueuse.f97b4275.js">
+  <link rel="modulepreload" crossorigin href="/ravi/assets/vite-ssg.9953a0af.js">
+  <link rel="stylesheet" href="/ravi/assets/index.18fdeed8.css">
   <link rel="stylesheet" href="/ravi/assets/@unocss.5c167a30.css">
 <link rel="manifest" href="/ravi/manifest.webmanifest"></head>
+
 <body>
-<div id="appProvider" style="display: none"></div>
-<div id="app">
-  <style>
-    .first-loading-wrap {
-      display: flex;
-      width: 100%;
-      height: 100vh;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-
-    .first-loading-wrap > h1 {
-      font-size: 128px
-    }
-
-    .first-loading-wrap .loading-wrap {
-      padding: 98px;
-      display: flex;
-      justify-content: center;
-      align-items: center
-    }
-
-    .dot {
-      animation: antRotate 1.2s infinite linear;
-      transform: rotate(45deg);
-      position: relative;
-      display: inline-block;
-      font-size: 32px;
-      width: 32px;
-      height: 32px;
-      box-sizing: border-box
-    }
-
-    .dot i {
-      width: 14px;
-      height: 14px;
-      position: absolute;
-      display: block;
-      background-color: #1890ff;
-      border-radius: 100%;
-      transform: scale(.75);
-      transform-origin: 50% 50%;
-      opacity: .3;
-      animation: antSpinMove 1s infinite linear alternate
-    }
-
-    .dot i:nth-child(1) {
-      top: 0;
-      left: 0
-    }
-
-    .dot i:nth-child(2) {
-      top: 0;
-      right: 0;
-      -webkit-animation-delay: .4s;
-      animation-delay: .4s
-    }
-
-    .dot i:nth-child(3) {
-      right: 0;
-      bottom: 0;
-      -webkit-animation-delay: .8s;
-      animation-delay: .8s
-    }
-
-    .dot i:nth-child(4) {
-      bottom: 0;
-      left: 0;
-      -webkit-animation-delay: 1.2s;
-      animation-delay: 1.2s
-    }
-
-    @keyframes antRotate {
-      to {
-        -webkit-transform: rotate(405deg);
-        transform: rotate(405deg)
-      }
-    }
-
-    @-webkit-keyframes antRotate {
-      to {
-        -webkit-transform: rotate(405deg);
-        transform: rotate(405deg)
-      }
-    }
-
-    @keyframes antSpinMove {
-      to {
-        opacity: 1
-      }
-    }
-
-    @-webkit-keyframes antSpinMove {
-      to {
-        opacity: 1
-      }
-    }</style>
-  <div class="first-loading-wrap">
-    <div class="loading-wrap">
-      <span class="dot dot-spin"><i></i><i></i><i></i><i></i></span>
-    </div>
-  </div>
-</div>
-<script>var globalThis = window;</script>
-
+  <div id="appProvider" style="display: none"></div>
+  <div id="app"></div>
+  
 </body>
+
 </html>
