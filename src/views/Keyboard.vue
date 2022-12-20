@@ -60,7 +60,16 @@ onUnmounted(() => {
     <div v-for="row_keys in keys" :key="row_keys" class="row">
       <button v-for="key in row_keys" :key="key" :ref="setRefs" @click="onClick(key)">
         <favicon v-if="hotkeys[key]" class="fav" :src="hotkeys[key].url" :text="hotkeys[key].name" />
-        {{ key }}
+
+        <n-popover style="text-align: center" :disabled="!hotkeys[key]" trigger="hover">
+          <template #trigger>
+            {{ key }}
+          </template>
+          <span>{{ hotkeys[key].name }} </span>
+          <template #footer>
+            {{ hotkeys[key].url }}
+          </template>
+        </n-popover>
       </button>
     </div>
     <button ref="space" class="space">

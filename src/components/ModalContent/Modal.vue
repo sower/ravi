@@ -6,6 +6,7 @@ import { useWebsiteStore } from '~/store/website';
 const websiteStore = useWebsiteStore()
 const { currentSite: site, showModal } = storeToRefs(websiteStore)
 const formRef = ref<FormInst | null>(null)
+const allowShortcut = (value: string) => !value || /^\w{1}$/.test(value)
 
 const rules = {
   name: {
@@ -27,6 +28,8 @@ const rules = {
 
 function saveSite(e: MouseEvent) {
   e.preventDefault()
+  site.value.name = site.value.name.trim()
+  site.value.url = site.value.url.trim()
   formRef.value?.validate((errors) => {
     if (errors) {
       window.$message.error('Invalid')
@@ -56,7 +59,7 @@ function saveSite(e: MouseEvent) {
         <n-input v-model:value="site.url" />
       </n-form-item>
       <n-form-item label="快捷键" path="shortcut">
-        <n-input v-model:value="site.shortcut" :maxlength="1" />
+        <n-input v-model:value="site.shortcut" :allow-input="allowShortcut" :maxlength="1" />
       </n-form-item>
     </n-form>
 
