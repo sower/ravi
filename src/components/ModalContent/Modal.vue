@@ -6,7 +6,7 @@ import { useWebsiteStore } from '~/store/website';
 const websiteStore = useWebsiteStore()
 const { currentSite: site, showModal } = storeToRefs(websiteStore)
 const formRef = ref<FormInst | null>(null)
-const allowShortcut = (value: string) => !value || /^\w{1}$/.test(value)
+const allowShortcut = (value: string) => !value || /^\w$/.test(value)
 
 const rules = {
   name: {

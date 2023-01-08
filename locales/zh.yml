@@ -1,0 +1,25 @@
+﻿Hello: 您好，游客! 现在是 {now}。
+
+navigation: 导航
+
+not-found: 找点乐子吧
+
+language:
+  en: English
+  zh: 中文
+
+header:
+  hothub: 热榜
+  keyboard-mode: 键盘模式
+  search-mode: 搜索模式
+  setting: 设置
+
+
+settings:
+  background-image: 背景图
+  dump: 导出
+  load: 导入
+  opacity: 不透明度
+  show: 显示
+  url: 地址
+  websites: 站点

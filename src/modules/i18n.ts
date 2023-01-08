@@ -1,4 +1,5 @@
 import { createI18n } from 'vue-i18n'
+import { language } from '~/store/projectSetting'
 import { type UserModule } from '~/types'
 
 // Import i18n resources
@@ -15,7 +16,7 @@ const messages = Object.fromEntries(
 export const install: UserModule = ({ app }) => {
   const i18n = createI18n({
     legacy: false,
-    locale: 'en',
+    locale: language.value,
     messages,
   })
 

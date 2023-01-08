@@ -1,40 +1,35 @@
 <script setup lang="ts">
 import type { LangEnum } from '~/enum/appEnum';
-import { useProjectSettingStore } from '~/store/projectSetting';
+import { language, theme } from '~/store/projectSetting';
 
 const { t, availableLocales: locales, locale } = useI18n()
 
 const langOptions = locales.map((lang) => {
   return {
-    label: t(lang),
+    label: t(`language.${lang}`),
     key: lang,
     disabled: false,
   }
 })
 
-const settingStore = useProjectSettingStore()
-
 function getLanguageList() {
   langOptions.forEach((lang) => {
-    lang.disabled = lang.key === settingStore.language
+    lang.disabled = lang.key === language.value
   })
   return langOptions
 }
 
 function changeLanguage(key: LangEnum) {
-  window.$message.info(key)
-  settingStore.setLanguage(key)
+  language.value = key
   locale.value = key
 }
 
 function changeTheme() {
-  settingStore.theme
-    ? settingStore.setTheme('')
-    : settingStore.setTheme('dark')
+  theme.value = theme.value ? '' : 'dark'
 }
 
 function hello() {
-  window.$message.info(t('Hello'))
+  window.$message.info(t('Hello', { now: new Date().toLocaleString() }))
 }
 </script>
 
@@ -74,7 +69,7 @@ function hello() {
         </n-dropdown>
 
         <n-text cursor-pointer @click="changeTheme">
-          <div v-if="settingStore.theme" theme-color i-carbon-moon />
+          <div v-if="theme" theme-color i-carbon-moon />
           <div v-else theme-color i="carbon-sun" />
         </n-text>
       </n-space>

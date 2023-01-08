@@ -1,5 +1,7 @@
 ﻿<script lang="ts" setup>
+import _ from 'lodash/string';
 import type { PropType } from 'vue';
+import { openUrl } from '~/utils/common';
 
 interface Item {
   title: String
@@ -19,8 +21,8 @@ defineProps({
   },
 })
 
-function openUrl(url: string) {
-  window.open(url)
+function truncate(content: string) {
+  return _.truncate(content, { length: 50 })
 }
 </script>
 
@@ -45,7 +47,7 @@ function openUrl(url: string) {
     <template #description>
       <n-space justify="space-around" :wrap="false">
         <n-image width="180" lazy :src="item.thumbnail" />
-        {{ item.description }}
+        {{ truncate(item.description) }}
       </n-space>
     </template>
 

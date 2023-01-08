@@ -1,6 +1,9 @@
 <script lang="ts" setup>
 import { onMounted, onUnmounted } from '@vue/runtime-core';
+import { setTitle } from '~/store/projectSetting';
 import { useWebsiteStore } from '~/store/website';
+const { t } = useI18n()
+setTitle(t('header.keyboard-mode'))
 
 const keys = [
   ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'],
@@ -85,7 +88,7 @@ onUnmounted(() => {
   padding: 2vmax;
   width: 85vmax;
   height: auto;
-  margin: 25px auto;
+  margin: 8vh auto;
   border-radius: 10px;
   display: flex;
   justify-content: space-around;

@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import { darkTheme, dateZhCN, zhCN } from 'naive-ui';
-import { useProjectSettingStore } from '~/store/projectSetting';
+import { language, theme } from '~/store/projectSetting';
+import { LangEnum } from './enum/appEnum';
 
-const settingStore = useProjectSettingStore()
-
-const getLocale = computed(() => (settingStore.language === 'zh' ? zhCN : null))
-const getDateLocale = computed(() => (settingStore.language === 'zh' ? dateZhCN : null))
-const getDarkTheme = computed(() => (settingStore.theme ? darkTheme : undefined))
+const getLocale = computed(() => (language.value === LangEnum.ZH ? zhCN : null))
+const getDateLocale = computed(() => (language.value === LangEnum.ZH ? dateZhCN : null))
+const getDarkTheme = computed(() => (theme.value ? darkTheme : undefined))
 </script>
 
 <template>
@@ -15,13 +14,3 @@ const getDarkTheme = computed(() => (settingStore.theme ? darkTheme : undefined)
   </n-config-provider>
 </template>
 
-<style scoped>
-.bg {
-  /* background-image: url("./src/assets/bg.jpg"); */
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  opacity: 0.5;
-}
-</style>

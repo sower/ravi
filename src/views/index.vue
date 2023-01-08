@@ -1,13 +1,15 @@
 <script setup lang="ts">
+import { setTitle } from '~/store/projectSetting';
+setTitle('Lattice')
 </script>
 
 <template>
-  <n-layout-content content-style="padding: 24px;">
+  <div p-2xl>
     <div class="search-box">
       <dropdown-search />
     </div>
     <grid />
-  </n-layout-content>
+  </div>
 </template>
 
 <style scoped>

@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { setTitle } from '~/store/projectSetting';
 import { getTophub } from '~/utils/requests';
+const { t } = useI18n()
+setTitle(t('header.hothub'))
 
 const hotList = ref([])
 
@@ -16,11 +19,11 @@ onBeforeMount(() => {
   <n-space justify="center" class="box">
     <div text-2xl font-medium i-carbon-fire color-red />
     <n-gradient-text :size="24" type="danger">
-      Hothub
+      {{ t('header.hothub') }}
     </n-gradient-text>
   </n-space>
 
-  <n-space v-if="hotList.length === 0" my-3xl vertical>
+  <n-space v-if="hotList.length === 0" class="my-[30vh]" vertical>
     <n-skeleton height="40px" mx-auto width="85%" />
     <n-skeleton height="40px" mx-auto width="80%" :sharp="false" />
     <n-skeleton height="40px" mx-auto width="80%" round />

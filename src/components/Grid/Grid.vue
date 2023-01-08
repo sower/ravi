@@ -10,7 +10,7 @@ const { websites, showModal, getHotKeys: hotKeys } = storeToRefs(websiteStore)
 
 const dropdownOptions = [
   {
-    label: '编辑',
+    label: 'Edit',
     key: 'edit',
   },
 ]

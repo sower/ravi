@@ -1,10 +1,23 @@
 ﻿navigation: Navigation
-en: English
-zh-CN: 中文
+Hello: Hello, guest! Now is {now}.
+not-found: Have some fun
+
+language:
+  en: English
+  zh: 中文
 
 header:
   keyboard-mode: Keyboard Mode
   search-mode: Search Mode
   hothub: Hothub
+  setting: Settings
 
-Hello: Hello, guest!
+settings:
+  background-image: Background image
+  show: Show
+  url: URL
+  opacity: Opacity
+  websites: Websites
+  load: Load
+  dump: Dump
+

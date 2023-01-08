@@ -44,11 +44,6 @@ function saveTitle() {
 const target = ref(null)
 onClickOutside(target, event => saveTitle())
 
-function openSites(e: MouseEvent) {
-  e.preventDefault()
-  props.sites.forEach(site => openUrl(site.url))
-}
-
 const showContext = inject<boolean>('showContext')
 const positionX = inject<number>('positionX')
 const positionY = inject<number>('positionY')
