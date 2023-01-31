@@ -1,0 +1,1 @@
+import{s as e}from"./index-c5ad6a6d.js";import{e as a,o as s,k as c,t as r,h as i}from"./.pnpm-029b6379.js";const t={},l={__name:"[...all]",setup(f){const{t:o}=a();e(404);function n(){location.pathname="/"}return(p,u)=>(s(),c("button",{btn:"",onClick:n},r(i(o)("not-found")),1))}};typeof t=="function"&&t(l);export{l as default};
