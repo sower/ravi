@@ -1,7 +1,7 @@
 ﻿<script lang="ts" setup>
-import _ from 'lodash/string';
-import type { PropType } from 'vue';
-import { openUrl } from '~/utils/common';
+import _ from 'lodash/string'
+import type { PropType } from 'vue'
+import { openUrl } from '~/utils/common'
 
 interface Item {
   title: String
@@ -56,4 +56,3 @@ function truncate(content: string) {
     </template>
   </n-thing>
 </template>
-

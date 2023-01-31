@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { reactive, toRef } from '@vue/reactivity';
-import type { DropdownOption } from 'naive-ui';
+import type { DropdownOption } from 'naive-ui'
 
 import defaultEngines from '~/store/config/searchEngines.json';
 

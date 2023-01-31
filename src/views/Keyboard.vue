@@ -1,7 +1,6 @@
 <script lang="ts" setup>
-import { onMounted, onUnmounted } from '@vue/runtime-core';
-import { setTitle } from '~/store/projectSetting';
-import { useWebsiteStore } from '~/store/website';
+import { setTitle } from '~/store/projectSetting'
+import { useWebsiteStore } from '~/store/website'
 const { t } = useI18n()
 setTitle(t('header.keyboard-mode'))
 
@@ -83,12 +82,11 @@ onUnmounted(() => {
 
 <style scoped>
 .container {
-  /* background-color: #cccccc; */
   border: ridge medium #cccccc;
   padding: 2vmax;
   width: 85vmax;
   height: auto;
-  margin: 8vh auto;
+  margin: calc((100vh - 500px)/2) auto;
   border-radius: 10px;
   display: flex;
   justify-content: space-around;
@@ -97,7 +95,7 @@ onUnmounted(() => {
 }
 
 .row {
-  padding: 16px 8px;
+  padding: 1rem 0.5rem;
   height: 6em;
   text-align: center;
 }
@@ -107,11 +105,11 @@ button {
   background-color: white;
   font-size: larger;
   font-weight: bolder;
-  margin-right: 16px;
-  padding: 16px 24px;
+  margin-right: 1rem;
+  padding: 1rem 1.5rem;
   border: 1px groove grey;
   border-radius: 5px;
-  box-shadow: inset 0 0 2em rgb(0 0 0 / 5%), 2px 2px 0px grey,
+  box-shadow: inset 0 0 2rem rgb(0 0 0 / 5%), 2px 2px 0px grey,
     0px 3px 9px rgb(0 0 0 / 70%);
   cursor: pointer;
   color: black;
@@ -127,14 +125,14 @@ button:hover,
   position: absolute;
   bottom: 3px;
   left: 3px;
-  width: 1.25em;
-  height: 1.25em;
+  width: 1.25rem;
+  height: 1.25rem;
   opacity: 0.75;
 }
 
 .space {
   width: 35%;
-  margin: 1em auto;
+  margin: 1rem auto;
 }
 
 @media screen and (max-width: 992px) {
@@ -152,8 +150,8 @@ button:hover,
   .fav {
     bottom: 2px;
     left: 2px;
-    width: 0.6em;
-    height: 0.6em;
+    width: 0.6rem;
+    height: 0.6rem;
     opacity: 0.75;
   }
 }

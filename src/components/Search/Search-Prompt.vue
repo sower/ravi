@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import type { Ref } from '@vue/reactivity'
-import { ref } from '@vue/reactivity'
 import type { onSearch, SelectOption } from 'naive-ui'
 import type { VNodeChild } from 'vue'
 import { h, watch } from 'vue'

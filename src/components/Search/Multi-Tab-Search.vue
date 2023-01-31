@@ -1,14 +1,11 @@
 <script setup lang="ts">
-import defaultEngines from '~/store/config/searchEngines.json';
-import type { Engine } from '~/store/types';
+import defaultEngines from '~/store/config/searchEngines.json'
+import type { Engine } from '~/store/types'
 
 const searchEngines = useStorage('searchEngines', defaultEngines)
-
+const enableEngineType = searchEngines.value.engineType.filter(e => e[2])
+const selectEngineType = useStorage('selectEngineType', enableEngineType[0][1])
 const { engineList } = searchEngines.value
-
-const engineType = searchEngines.value.engineType.filter(e => e[2])
-
-const selectEngineType = useStorage('selectEngineType', 'web')
 
 function switchTab(value: string) {
   selectEngineType.value = value
@@ -16,7 +13,7 @@ function switchTab(value: string) {
 
 function initEngines() {
   const engines = {}
-  for (const eType of engineType) {
+  for (const eType of enableEngineType) {
     const typeName = eType[1]
     engines[typeName] = engineList[typeName].filter((engine: Engine) => engine?.checked).map((engine: Engine) => engine.url)
   }
@@ -25,7 +22,7 @@ function initEngines() {
 
 const selectEngines = useStorage('selectEngines', initEngines())
 
-function checkTag(engine) {
+function checkTag(engine: Engine) {
   const subSelects = selectEngines.value[selectEngineType.value]
   if (engine?.checked) {
     engine.checked = false
@@ -61,7 +58,7 @@ function onSearch(searchValue: string) {
   <div class="w-[85%] mx-auto">
     <n-tabs class="mx-auto" justify-content="space-evenly" size="large" type="bar" :default-value="selectEngineType"
       animated @update:value="switchTab">
-      <n-tab-pane v-for="item in engineType" :key="item[1]" :name="item[1]" :tab="item[0]" />
+      <n-tab-pane v-for="item in enableEngineType" :key="item[1]" :name="item[1]" :tab="item[0]" />
     </n-tabs>
 
     <div class="w-[90%] mx-auto">
