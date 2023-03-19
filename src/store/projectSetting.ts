@@ -1,3 +1,5 @@
+import defaultEngines from '~/store/config/searchEngines.json'
+
 export const title = useTitle()
 
 export function setTitle(description: string) {
@@ -13,3 +15,5 @@ export const bgImage = useStorage('bgImage', {
   url: 'https://unsplash.it/1980/1080?random',
   opacity: 0.8,
 })
+
+export const searchEngines = useStorage('searchEngines', defaultEngines)

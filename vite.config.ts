@@ -1,4 +1,4 @@
-import path from 'path'
+import path from 'node:path'
 import VueI18n from '@intlify/unplugin-vue-i18n/vite'
 import Vue from '@vitejs/plugin-vue'
 import Unocss from 'unocss/vite'
@@ -10,7 +10,7 @@ import { defineConfig } from 'vite'
 import Inspect from 'vite-plugin-inspect'
 import Pages from 'vite-plugin-pages'
 import { VitePWA } from 'vite-plugin-pwa'
-import Preview from 'vite-plugin-vue-component-preview'
+// import Preview from 'vite-plugin-vue-component-preview'
 import Layouts from 'vite-plugin-vue-layouts'
 
 export default defineConfig({
@@ -22,7 +22,7 @@ export default defineConfig({
   },
 
   plugins: [
-    Preview(),
+    // Preview(),
 
     VueMacros({
       plugins: {

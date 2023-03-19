@@ -1,27 +1,30 @@
 <script setup lang="ts">
 import type { DropdownOption } from 'naive-ui'
 
-import defaultEngines from '~/store/config/searchEngines.json';
+import { searchEngines } from '~/store/projectSetting'
 
-const searchEngines = useStorage('searchEngines', defaultEngines)
-
+const enableEngineType = searchEngines.value.engineType.filter(e => e[2])
 const { engineList } = searchEngines.value
 
-const selectEngineType = useStorage('selectEngineType', 'web')
+const dropdownEngines = enableEngineType.map(eType => {
+  return {
+    label: eType[0],
+    key: eType[1],
+    children: engineList[eType[1]].map(
+      (e) => { return { label: e.name, key: e.url, favicon: e.favicon } })
+  }
+});
 
-const dropdownEngines = engineList[selectEngineType.value].map(
-  (e) => { return { label: e.name, key: e.url, favicon: e.favicon } })
 
-const dataRef: any = reactive({ currentEngine: dropdownEngines[0] })
-const currentEngine = toRef(dataRef, 'currentEngine')
+const currentEngine = useStorage('currentEngine', dropdownEngines[0]['children'][0])
 
 function setSearchEngine(key: string | number, option: DropdownOption) {
-  dataRef.currentEngine = option
+  currentEngine.value = option
 }
 
 // value
 function onSearch(searchValue: string) {
-  window.open(dataRef.currentEngine.key.replaceAll('%s', searchValue))
+  window.open(currentEngine.value.key.replaceAll('%s', searchValue))
 }
 </script>
 
