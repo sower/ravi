@@ -7,10 +7,9 @@ import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
 import VueMacros from 'unplugin-vue-macros/vite'
 import { defineConfig } from 'vite'
-import Inspect from 'vite-plugin-inspect'
-import Pages from 'vite-plugin-pages'
+import VueRouter from 'unplugin-vue-router/vite'
+import { VueRouterAutoImports } from 'unplugin-vue-router'
 import { VitePWA } from 'vite-plugin-pwa'
-// import Preview from 'vite-plugin-vue-component-preview'
 import Layouts from 'vite-plugin-vue-layouts'
 
 export default defineConfig({
@@ -22,8 +21,6 @@ export default defineConfig({
   },
 
   plugins: [
-    // Preview(),
-
     VueMacros({
       plugins: {
         vue: Vue({
@@ -33,10 +30,10 @@ export default defineConfig({
       },
     }),
 
-    // https://github.com/hannoeru/vite-plugin-pages
-    Pages({
-      extensions: ['vue', 'md'],
-      dirs: 'src/views',
+    // https://github.com/posva/unplugin-vue-router
+    VueRouter({
+      extensions: ['.vue', '.md'],
+      dts: 'src/typed-router.d.ts',
     }),
 
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
@@ -46,11 +43,14 @@ export default defineConfig({
     AutoImport({
       imports: [
         'vue',
-        'vue-router',
         'vue-i18n',
-        'vue/macros',
         '@vueuse/head',
         '@vueuse/core',
+        VueRouterAutoImports,
+        {
+          // add any other imports you were relying on
+          'vue-router/auto': ['useLink'],
+        },
         {
           'naive-ui': [
             'useDialog',
@@ -110,12 +110,10 @@ export default defineConfig({
     VueI18n({
       runtimeOnly: true,
       compositionOnly: true,
+      fullInstall: true,
       include: [path.resolve(__dirname, 'locales/**')],
     }),
 
-    // https://github.com/antfu/vite-plugin-inspect
-    // Visit http://localhost:port/__inspect/ to see the inspector
-    Inspect(),
   ],
 
   // https://github.com/antfu/vite-ssg

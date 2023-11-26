@@ -1,7 +1,7 @@
 # Ravi
 
 
-> Vite3 + Vue3 + Navie UI + TypeScript + Pinia
+> Vite + Vue3 + Navie UI + TypeScript + Pinia
 
 TODO：
 - search engines configuration
