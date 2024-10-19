@@ -167,13 +167,13 @@
       "shortcut": ""
     },
     {
-      "name": "微云文档",
-      "url": "https://doc.weiyun.com/",
+      "name": "Screego",
+      "url": "https://app.screego.net",
       "shortcut": ""
     },
     {
-      "name": "幕布",
-      "url": "https://mubu.com/",
+      "name": "Penpot",
+      "url": "https://penpot.app",
       "shortcut": ""
     },
     {
@@ -182,8 +182,8 @@
       "shortcut": ""
     },
     {
-      "name": "百度脑图",
-      "url": "http://naotu.baidu.com/",
+      "name": "PlantUML",
+      "url": "https://www.plantuml.com",
       "shortcut": ""
     }
   ],
@@ -417,8 +417,8 @@
       "shortcut": ""
     },
     {
-      "name": "自由钢琴",
-      "url": "https://www.autopiano.cn/",
+      "name": "IPCheck",
+      "url": "https://ipcheck.ing",
       "shortcut": ""
     }
   ]
