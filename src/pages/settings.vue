@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { setTitle } from '~/store/projectSetting';
+import { setTitle } from '~/store/projectSetting'
 
 const { t } = useI18n()
 setTitle(t('header.setting'))
@@ -7,7 +7,7 @@ setTitle(t('header.setting'))
 
 <template>
   <n-space vertical align="center" class="settings">
-    <n-space justify="space-evenly" text-4xl my-xl>
+    <n-space justify="space-evenly" my-xl text-4xl>
       <div class="i-carbon-settings" />
       <div>{{ t('header.setting') }}</div>
     </n-space>

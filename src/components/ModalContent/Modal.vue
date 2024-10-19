@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { FormInst } from 'naive-ui';
-import { storeToRefs } from 'pinia';
-import { useWebsiteStore } from '~/store/website';
+import type { FormInst } from 'naive-ui'
+import { storeToRefs } from 'pinia'
+import { useWebsiteStore } from '~/store/website'
 
 const websiteStore = useWebsiteStore()
 const { currentSite: site, showModal } = storeToRefs(websiteStore)

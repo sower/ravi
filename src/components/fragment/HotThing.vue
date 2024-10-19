@@ -1,17 +1,17 @@
-﻿<script lang="ts" setup>
-import _ from 'lodash/string'
+<script lang="ts" setup>
 import type { PropType } from 'vue'
+import _ from 'lodash/string'
 import { openUrl } from '~/utils/common'
 
 interface Item {
-  title: String
-  description: String
-  url: String
-  logo: String
-  time: Number
-  extra: String
-  views: String
-  thumbnail: String
+  title: string
+  description: string
+  url: string
+  logo: string
+  time: number
+  extra: string
+  views: string
+  thumbnail: string
 }
 
 defineProps({

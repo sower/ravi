@@ -6,17 +6,17 @@ import { searchEngines } from '~/store/projectSetting'
 const enableEngineType = searchEngines.value.engineType.filter(e => e[2])
 const { engineList } = searchEngines.value
 
-const dropdownEngines = enableEngineType.map(eType => {
+const dropdownEngines = enableEngineType.map((eType) => {
   return {
     label: eType[0],
     key: eType[1],
     children: engineList[eType[1]].map(
-      (e) => { return { label: e.name, key: e.url, favicon: e.favicon } })
+      (e) => { return { label: e.name, key: e.url, favicon: e.favicon } },
+    ),
   }
-});
+})
 
-
-const currentEngine = useStorage('currentEngine', dropdownEngines[0]['children'][0])
+const currentEngine = useStorage('currentEngine', dropdownEngines[0].children[0])
 
 function setSearchEngine(key: string | number, option: DropdownOption) {
   currentEngine.value = option
@@ -39,4 +39,3 @@ function onSearch(searchValue: string) {
     <SearchPrompt :do-search="onSearch" />
   </n-input-group>
 </template>
-

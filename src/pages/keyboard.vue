@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { setTitle } from '~/store/projectSetting'
 import { useWebsiteStore } from '~/store/website'
+
 const { t } = useI18n()
 setTitle(t('header.keyboard-mode'))
 
@@ -13,7 +14,7 @@ const keys = [
 
 const refKeys: any = reactive({})
 
-const setRefs = (e: HTMLElement) => {
+function setRefs(e: HTMLElement) {
   if (e)
     refKeys[e.innerText.trim()] = e
 }
@@ -21,12 +22,12 @@ const space: Ref<any> = ref(null)
 const editable = ref(false)
 const websiteStore = useWebsiteStore()
 const hotkeys = websiteStore.getHotKeys
-const onClick = (k: string) => {
+function onClick(k: string) {
   if (!editable.value && hotkeys[k])
     window.open(hotkeys[k].url)
 }
 
-const pressKey = (e) => {
+function pressKey(e) {
   const key = e.key.toUpperCase()
   if (!editable.value && /^[\dA-Z]$/.test(key))
     refKeys[key].className = 'press'
@@ -86,7 +87,7 @@ onUnmounted(() => {
   padding: 2vmax;
   width: 85vmax;
   height: auto;
-  margin: calc((100vh - 500px)/2) auto;
+  margin: calc((100vh - 500px) / 2) auto;
   border-radius: 10px;
   display: flex;
   justify-content: space-around;
@@ -109,7 +110,9 @@ button {
   padding: 1rem 1.5rem;
   border: 1px groove grey;
   border-radius: 5px;
-  box-shadow: inset 0 0 2rem rgb(0 0 0 / 5%), 2px 2px 0px grey,
+  box-shadow:
+    inset 0 0 2rem rgb(0 0 0 / 5%),
+    2px 2px 0px grey,
     0px 3px 9px rgb(0 0 0 / 70%);
   cursor: pointer;
   color: black;
@@ -117,7 +120,9 @@ button {
 
 button:hover,
 .press {
-  box-shadow: 2px 2px 0px grey, 3px 3px 9px rgba(0, 255, 255, 61);
+  box-shadow:
+    2px 2px 0px grey,
+    3px 3px 9px rgba(0, 255, 255, 61);
   border: 1px groove black;
 }
 

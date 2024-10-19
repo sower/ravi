@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { bgImage } from '~/store/projectSetting';
+import { bgImage } from '~/store/projectSetting'
 
 const { t } = useI18n()
 
@@ -12,7 +12,7 @@ function updateUrl() {
 
 <template>
   <n-space vertical align="center">
-    <n-space justify="space-evenly" text-xl my-sm>
+    <n-space justify="space-evenly" my-sm text-xl>
       <div text-2xl class="i-carbon-image" />
       <div>{{ t('settings.background-image') }}</div>
     </n-space>

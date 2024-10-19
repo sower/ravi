@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { setTitle } from '~/store/projectSetting';
-import { getTophub } from '~/utils/requests';
+import { setTitle } from '~/store/projectSetting'
+import { getTophub } from '~/utils/requests'
+
 const { t } = useI18n()
 setTitle(t('header.hothub'))
 
@@ -17,7 +18,7 @@ onBeforeMount(() => {
 
 <template>
   <n-space justify="center" class="box">
-    <div text-2xl font-medium i-carbon-fire color-red />
+    <div i-carbon-fire text-2xl color-red font-medium />
     <n-gradient-text :size="24" type="danger">
       {{ t('header.hothub') }}
     </n-gradient-text>
@@ -26,8 +27,8 @@ onBeforeMount(() => {
   <n-space v-if="hotList.length === 0" class="my-[30vh]" vertical>
     <n-skeleton height="40px" mx-auto width="85%" />
     <n-skeleton height="40px" mx-auto width="80%" :sharp="false" />
-    <n-skeleton height="40px" mx-auto width="80%" round />
-    <n-skeleton height="40px" mx-auto circle />
+    <n-skeleton height="40px" width="80%" round mx-auto />
+    <n-skeleton height="40px" circle mx-auto />
   </n-space>
   <div v-for="item in hotList" :key="item" class="box">
     <HotThing :item="item" />

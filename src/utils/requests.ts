@@ -39,4 +39,3 @@ export function getTophub() {
     })
     .catch(error => console.log(error))
 }
-

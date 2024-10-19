@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { onClickOutside } from '@vueuse/core'
 import type { PropType } from 'vue'
+import { onClickOutside } from '@vueuse/core'
 import { inject, nextTick, ref } from 'vue'
 import type { Site } from '~/store/types'
 import { useWebsiteStore } from '~/store/website'
@@ -62,15 +62,19 @@ function handleContextMenu(site: Site, event: MouseEvent) {
 
 <template>
   <n-h4 prefix="bar" class="ml-1 max-w-[90%]" @click="openInput">
-    <n-input v-if="showInput" ref="target" v-model:value="titleName" type="text" :status="inputStatus" maxlength="10"
-      minlength="1" autofocus clearable />
+    <n-input
+      v-if="showInput" ref="target" v-model:value="titleName" type="text" :status="inputStatus" maxlength="10"
+      minlength="1" autofocus clearable
+    />
     <n-text v-else strong>
       {{ titleName }}
     </n-text>
   </n-h4>
   <n-grid :x-gap="8" :y-gap="8" :cols="3" class="max-w-[400px]">
-    <n-grid-item v-for="(site, index) in sites" :key="site.id"
-      @contextmenu="handleContextMenu({ ...site, index, group: title }, $event)">
+    <n-grid-item
+      v-for="(site, index) in sites" :key="site.id"
+      @contextmenu="handleContextMenu({ ...site, index, group: title }, $event)"
+    >
       <div class="square" @click="openUrl(site.url)">
         <n-ellipsis max-w-sm>
           {{ site.name }}

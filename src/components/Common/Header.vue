@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { LangEnum } from '~/enum/appEnum';
-import { language, theme } from '~/store/projectSetting';
+import type { LangEnum } from '~/enum/appEnum'
+import { language, theme } from '~/store/projectSetting'
 
 const { t, availableLocales: locales, locale } = useI18n()
 
@@ -37,7 +37,7 @@ function hello() {
   <n-layout-header pb-1>
     <n-space align="center" justify="space-around" size="large">
       <n-space text-2xl align="center" justify="space-around">
-        <div text-3xl i-ravi-fav />
+        <div i-ravi-fav text-3xl />
         <router-link to="/">
           <h1 class="color-#18a058 hover:color-#36ad6a">
             Ravi
@@ -60,20 +60,19 @@ function hello() {
       </n-space>
 
       <n-space text-xl font-medium align="center" justify="space-around">
-        <div theme-color cursor-pointer i-carbon-user @click="hello" />
+        <div i-carbon-user cursor-pointer theme-color @click="hello" />
         <router-link to="/Settings">
           <div theme-color i="carbon-settings" />
         </router-link>
         <n-dropdown trigger="hover" :options="getLanguageList()" @select="changeLanguage">
-          <div theme-color i-carbon:ibm-watson-language-translator />
+          <div i-carbon:ibm-watson-language-translator theme-color />
         </n-dropdown>
 
         <n-text cursor-pointer @click="changeTheme">
-          <div v-if="theme" theme-color i-carbon-moon />
+          <div v-if="theme" i-carbon-moon theme-color />
           <div v-else theme-color i="carbon-sun" />
         </n-text>
       </n-space>
     </n-space>
   </n-layout-header>
 </template>
-

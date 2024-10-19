@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { setTitle } from '~/store/projectSetting';
+import { setTitle } from '~/store/projectSetting'
+
 setTitle('Lattice')
 </script>
 

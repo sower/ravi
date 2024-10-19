@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import _ from 'lodash/lang';
-import { storeToRefs } from 'pinia';
-import type { Site } from '~/store/types';
-import { useWebsiteStore } from '~/store/website';
+import _ from 'lodash/lang'
+import { storeToRefs } from 'pinia'
+import type { Site } from '~/store/types'
+import { useWebsiteStore } from '~/store/website'
 
 const { t } = useI18n()
 
@@ -49,8 +49,10 @@ function dump() {
 <template>
   <n-space vertical align="center">
     <n-h2>{{ t('settings.websites') }}</n-h2>
-    <n-input v-model:value="settingsStr" class="min-w-[50vw]" :autosize="{ minRows: 5, maxRows: 20 }" type="textarea"
-      size="large" />
+    <n-input
+      v-model:value="settingsStr" class="min-w-[50vw]" :autosize="{ minRows: 5, maxRows: 20 }" type="textarea"
+      size="large"
+    />
 
     <n-space my-xl justify="space-around">
       <button btn @click="dump">

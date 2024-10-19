@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { useActiveElement, useMagicKeys, whenever } from '@vueuse/core';
-import { storeToRefs } from 'pinia';
-import { useWebsiteStore } from '~/store/website';
-import { openUrl } from '~/utils/common';
+import { useActiveElement, useMagicKeys, whenever } from '@vueuse/core'
+import { storeToRefs } from 'pinia'
+import { useWebsiteStore } from '~/store/website'
+import { openUrl } from '~/utils/common'
 
 const websiteStore = useWebsiteStore()
 
@@ -59,7 +59,9 @@ whenever(current, () => {
       <Square :sites="sites" :title="title" />
     </n-grid-item>
   </n-grid>
-  <n-dropdown placement="bottom-start" trigger="manual" :x="positionX" :y="positionY" :options="dropdownOptions"
-    :show="showContext" :on-clickoutside="onClickoutside" @select="handleSelect" />
+  <n-dropdown
+    placement="bottom-start" trigger="manual" :x="positionX" :y="positionY" :options="dropdownOptions"
+    :show="showContext" :on-clickoutside="onClickoutside" @select="handleSelect"
+  />
   <Modal />
 </template>

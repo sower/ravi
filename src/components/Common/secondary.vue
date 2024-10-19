@@ -1,6 +1,7 @@
 <script lang="ts" setup>
-import { darkTheme } from 'naive-ui';
-import { theme } from '~/store/projectSetting';
+import { darkTheme } from 'naive-ui'
+import { theme } from '~/store/projectSetting'
+
 const getDarkTheme = computed(() => (theme.value ? darkTheme : undefined))
 </script>
 

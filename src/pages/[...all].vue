@@ -1,5 +1,6 @@
 <script setup ts>
-import { setTitle } from '~/store/projectSetting';
+import { setTitle } from '~/store/projectSetting'
+
 const { t } = useI18n()
 setTitle(404)
 

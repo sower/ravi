@@ -47,26 +47,30 @@ function onSearch(searchValue: string) {
 </script>
 
 <template>
-  <div m-7 flex justify-center align-center>
+  <div align-center m-7 flex justify-center>
     <n-gradient-text :size="36" type="success">
       Search
     </n-gradient-text>
-    <div text-4xl ml-4 class="i-carbon:search-advanced" />
+    <div ml-4 text-4xl class="i-carbon:search-advanced" />
   </div>
 
-  <div class="w-[85%] mx-auto">
-    <n-tabs class="mx-auto" justify-content="space-evenly" size="large" type="bar" :default-value="selectEngineType"
-      animated @update:value="switchTab">
+  <div class="mx-auto w-[85%]">
+    <n-tabs
+      class="mx-auto" justify-content="space-evenly" size="large" type="bar" :default-value="selectEngineType"
+      animated @update:value="switchTab"
+    >
       <n-tab-pane v-for="item in enableEngineType" :key="item[1]" :name="item[1]" :tab="item[0]" />
     </n-tabs>
 
-    <div class="w-[90%] mx-auto">
+    <div class="mx-auto w-[90%]">
       <search-prompt :do-search="onSearch" size="large" />
     </div>
 
-    <n-space justify="space-around" class="mt-5 mb-8">
-      <n-tag v-for="engine in engineList[selectEngineType]" :key="engine" :bordered="false" checkable
-        :checked="engine.checked" round @click="checkTag(engine)">
+    <n-space justify="space-around" class="mb-8 mt-5">
+      <n-tag
+        v-for="engine in engineList[selectEngineType]" :key="engine" :bordered="false"
+        :checked="engine.checked" round checkable @click="checkTag(engine)"
+      >
         {{ engine.name }}
         <template #avatar>
           <n-avatar color="white" :src="engine.favicon" />

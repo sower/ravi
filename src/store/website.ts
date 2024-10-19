@@ -1,6 +1,6 @@
+import type { Site } from './types'
 import { defineStore } from 'pinia'
 import websites from './config/websites.json'
-import type { Site } from './types'
 
 const storage = localStorage
 

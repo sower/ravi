@@ -19,7 +19,7 @@ const searchPrompt: Ref<any> = ref([])
 
 // value
 function executeSearch(searchValue: string) {
-  const searchLabel = searchPrompt.value[parseInt(searchValue)].label
+  const searchLabel = searchPrompt.value[Number.parseInt(searchValue)].label
   props.doSearch(searchLabel)
 }
 
@@ -53,9 +53,11 @@ watch(searchKey, (cur, pre) => {
 </script>
 
 <template>
-  <n-auto-complete v-model:value="searchKey" :input-props="{ maxlength: '10' }" :options="searchPrompt" :size="size"
-    blur-after-select clearable :on-select="executeSearch" :render-label="renderLabel" placeholder="Search ..."
-    @get-show="getShow">
+  <n-auto-complete
+    v-model:value="searchKey" :input-props="{ maxlength: '10' }" :options="searchPrompt" :size="size"
+    clearable blur-after-select :on-select="executeSearch" :render-label="renderLabel" placeholder="Search ..."
+    @get-show="getShow"
+  >
     <template #suffix>
       <div i-carbon-search />
     </template>

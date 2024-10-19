@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useThemeVars } from 'naive-ui';
-import { bgImage } from '~/store/projectSetting';
+import { useThemeVars } from 'naive-ui'
+import { bgImage } from '~/store/projectSetting'
 
 const themeVars = useThemeVars()
 const themeBodyColor = computed(() => themeVars.value.bodyColor)
