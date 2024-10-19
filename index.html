@@ -1,55 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-cmn-Hans" id="htmlRoot" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/ravi/favicon.svg" rel="icon" />
+    <title>Ravi</title>
+    <script type="module" crossorigin src="/ravi/assets/index-BV-02SDE.js"></script>
+    <link rel="modulepreload" crossorigin href="/ravi/assets/@vue_shared@3.5.12-BOMFVqth.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/@vue_reactivity@3.5.12-g-Lvtq_S.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/@vue_runtime-core@3.5.12-KnjHTw7F.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/@vueuse_shared@11.1.0_vue@3.5.12_typescript@5.6.3_-CVk0eC74.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/@vueuse_core@11.1.0_vue@3.5.12_typescript@5.6.3_-Yv-kXWql.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/@intlify_shared@10.0.4-w5IYapEx.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/@intlify_message-compiler@10.0.4-CToo3eC7.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/@intlify_core-base@10.0.4-RIkX1U0C.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/vue-i18n@10.0.4_vue@3.5.12_typescript@5.6.3_-C7TTVHTu.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/vue-demi@0.14.10_vue@3.5.12_typescript@5.6.3_-Dq6ymT-8.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/pinia@2.2.4_typescript@5.6.3_vue@3.5.12_typescript@5.6.3_-D24NGKxo.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/@vue_runtime-dom@3.5.12-CWr_KtW9.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/vue-router@4.4.5_vue@3.5.12_typescript@5.6.3_-CLyaJ7WZ.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/@unhead_shared@1.11.10-C1bv5ODb.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/@unhead_dom@1.11.10-CNTx9FV3.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/hookable@5.5.3-B8xFkYCm.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/unhead@1.11.10-OT7iNT2x.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/@unhead_vue@1.11.10_vue@3.5.12_typescript@5.6.3_-B8AFtn10.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/vite-ssg@0.23.8_critters@0.0.25_vite@5.4.9_@types_node@20.10.4_terser@5.26.0__vue-router@4.4._tpsi4qxyxd27btw6vqz7ijh4gm-CuxNj3V1.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/date-fns@3.6.0-BYQXydFc.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/evtd@0.2.4-CI_DDEu_.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/vooks@0.2.12_vue@3.5.12_typescript@5.6.3_-D8Rsv1Sm.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/treemate@0.3.11-HRdUPn5m.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/seemly@0.3.8-D9G0Xg2e.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/@css-render_vue3-ssr@0.15.14_vue@3.5.12_typescript@5.6.3_-6IDDgy2s.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/vdirs@0.1.8_vue@3.5.12_typescript@5.6.3_-C0KV5pCE.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/@juggle_resize-observer@3.4.0-C8OzoCMD.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/@emotion_hash@0.8.0-WldOFDRm.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/css-render@0.15.14-C5toWlUr.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/vueuc@0.4.64_vue@3.5.12_typescript@5.6.3_-kqvdKGq3.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/lodash-es@4.17.21-CJQM_G14.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/async-validator@4.2.5-DKvM95Vc.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/date-fns-tz@3.2.0_date-fns@3.6.0-DuQ-CiuB.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/@css-render_plugin-bem@0.15.14_css-render@0.15.14-Be8eOoM-.js">
+    <link rel="modulepreload" crossorigin href="/ravi/assets/naive-ui@2.40.1_vue@3.5.12_typescript@5.6.3_-D4cbiTKP.js">
+    <link rel="stylesheet" crossorigin href="/ravi/assets/index-DpWlAqtz.css">
+    <link rel="stylesheet" crossorigin href="/ravi/assets/@unocss_reset@0.63-B4eFsVd0.css">
+  <link rel="manifest" href="/ravi/manifest.webmanifest"></head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/ravi/favicon.svg" rel="icon" />
-  <title>Ravi</title>
-  <script type="module" crossorigin src="/ravi/assets/index-5W86RE6n.js"></script>
-  <link rel="modulepreload" crossorigin href="/ravi/assets/@vue_shared@3.3.12-0lL7hL3O.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/@vue_reactivity@3.3.12-appJa7x2.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/@vue_runtime-core@3.3.12-HMTOTnwY.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/@vueuse_shared@10.7.0_vue@3.3.12-hWEE3yGa.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/@vueuse_core@10.7.0_vue@3.3.12-IckTQZQI.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/@intlify_shared@9.8.0-sBFItQyN.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/@intlify_message-compiler@9.8.0-QpzHMHM0.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/@intlify_core-base@9.8.0-zdLpL5je.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/vue-i18n@9.8.0_vue@3.3.12-ox0wutPI.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/vue-demi@0.14.6_vue@3.3.12-C4xddsk9.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/pinia@2.1.7_typescript@5.3.3_vue@3.3.12-UsNTopFB.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/@babel_runtime@7.23.6-5wjvuyNL.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/date-fns@2.30.0-1HyWxRmb.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/@vue_runtime-dom@3.3.12-exFE0ZHW.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/evtd@0.2.4-9ZCiDXyn.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/vooks@0.2.12_vue@3.3.12-DR4DXOAT.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/treemate@0.3.11-hmrDCADh.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/seemly@0.3.8-tZbmuCcS.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/@css-render_vue3-ssr@0.15.12_vue@3.3.12-GjBaTgOa.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/vdirs@0.1.8_vue@3.3.12-0sJ3IHV-.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/@juggle_resize-observer@3.4.0--NVrOerG.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/@emotion_hash@0.8.0-vV6BesBt.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/css-render@0.15.12-9_1cMtkY.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/vueuc@0.4.54_vue@3.3.12-YsIUEGOT.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/lodash-es@4.17.21-lFIhOgkm.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/async-validator@4.2.5-BHjhHa7C.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/date-fns-tz@2.0.0_date-fns@2.30.0-Lpl27sgr.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/@css-render_plugin-bem@0.15.12_css-render@0.15.12-QyaMmhxu.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/naive-ui@2.35.0_vue@3.3.12-x0W7m_hE.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/vue-router@4.2.5_vue@3.3.12-12jW6XkY.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/hookable@5.5.3-Cuq9Dhxc.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/@unhead_shared@1.8.9-fjCBxbYg.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/@unhead_dom@1.8.9-xJXXhpgN.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/unhead@1.8.9-Z-RxyeII.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/@unhead_vue@1.8.9_vue@3.3.12-okyN0QD2.js">
-  <link rel="modulepreload" crossorigin href="/ravi/assets/vite-ssg@0.23.5_critters@0.0.20_vite@5.0.10_vue-router@4.2.5_vue@3.3.12-uPWilPSs.js">
-  <link rel="stylesheet" crossorigin href="/ravi/assets/index-3rEblnO5.css">
-  <link rel="stylesheet" crossorigin href="/ravi/assets/@unocss_reset@0.57-jKS8F7fF.css">
-<link rel="manifest" href="/ravi/manifest.webmanifest"></head>
-
-<body>
-  <div id="appProvider" style="display: none"></div>
-  <div id="app"></div>
-</body>
-
+  <body>
+    <div id="appProvider" style="display: none"></div>
+    <div id="app"></div>
+  </body>
 </html>
