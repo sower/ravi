@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { searchEngines } from '~/store/projectSetting'
 import type { Engine } from '~/store/types'
+import { searchEngines } from '~/store/projectSetting'
 
 const enableEngineType = searchEngines.value.engineType.filter(e => e[2])
 const selectEngineType = useStorage('selectEngineType', enableEngineType[0][1])

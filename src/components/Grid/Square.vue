@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
+import type { Site } from '~/store/types'
 import { onClickOutside } from '@vueuse/core'
 import { inject, nextTick, ref } from 'vue'
-import type { Site } from '~/store/types'
 import { useWebsiteStore } from '~/store/website'
 import { openUrl } from '~/utils/common'
 

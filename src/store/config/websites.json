@@ -50,7 +50,7 @@
     {
       "name": "知乎",
       "url": "http://www.zhihu.com",
-      "shortcut": "Z"
+      "shortcut": ""
     },
     {
       "name": "微博",
@@ -60,11 +60,6 @@
     {
       "name": "豆瓣",
       "url": "http://www.douban.com",
-      "shortcut": "D"
-    },
-    {
-      "name": "微信",
-      "url": "https://wx.qq.com",
       "shortcut": ""
     },
     {
@@ -73,70 +68,75 @@
       "shortcut": ""
     },
     {
-      "name": "Discord",
-      "url": "https://discord.com",
+      "name": "Mastodon",
+      "url": "https://mastodon.social",
       "shortcut": ""
     },
     {
-      "name": "Facebook",
-      "url": "https://www.facebook.com/",
+      "name": "Bangumi",
+      "url": "https://bgm.tv",
+      "shortcut": ""
+    },
+    {
+      "name": "Slack",
+      "url": "https://slack.com",
       "shortcut": ""
     },
     {
       "name": "GitHub",
       "url": "https://github.com/",
-      "shortcut": ""
+      "shortcut": "G"
     },
     {
-      "name": "Twitter",
-      "url": "https://twitter.com/",
+      "name": "Discord",
+      "url": "https://discord.com/channels/@me",
       "shortcut": ""
     }
   ],
-  "Life": [
+  "Dev": [
     {
-      "name": "12306",
-      "url": "https://www.12306.cn/index/",
+      "name": "DevDocs",
+      "url": "https://devdocs.io/",
       "shortcut": ""
     },
     {
-      "name": "淘宝",
-      "url": "https://www.taobao.com/",
+      "name": "DevHints",
+      "url": "https://devhints.io/",
+      "shortcut": null
+    },
+    {
+      "name": " UnoCSS",
+      "url": "https://uno.antfu.me/",
       "shortcut": ""
     },
     {
-      "name": "京东",
-      "url": "https://www.jd.com/",
+      "name": "RoadMap",
+      "url": "https://roadmap.sh",
       "shortcut": ""
     },
     {
-      "name": "高德地图",
-      "url": "https://ditu.amap.com/",
+      "name": "Learn Any",
+      "url": "https://learn-anything.xyz/",
       "shortcut": ""
     },
     {
-      "name": "美团",
-      "url": "http://www.meituan.com/",
+      "name": "Cheatsheets",
+      "url": "https://cheatsheets.zip/",
       "shortcut": ""
     },
     {
-      "name": "下厨房",
-      "url": "http://www.xiachufang.com/",
+      "name": "Linux Man",
+      "url": "https://linuxcommandlibrary.com/",
       "shortcut": ""
     },
     {
-      "name": "比一比价",
-      "url": "http://b1bj.com/",
+      "name": "Icones",
+      "url": "https://icones.js.org/",
       "shortcut": ""
     },
     {
-      "name": "什么值得买",
-      "url": "https://www.smzdm.com/",
-      "shortcut": ""
-    },
-    {
-      "name": "西贴",
-      "url": "http://www.xitie.com/",
+      "name": "IT Tools",
+      "url": "https://it-tools.tech",
       "shortcut": ""
     }
   ],
@@ -229,8 +229,8 @@
       "shortcut": ""
     },
     {
-      "name": "酷狗",
-      "url": "http://www.kugou.com/",
+      "name": "GameBox",
+      "url": "https://gamebox.heheda.top",
       "shortcut": ""
     }
   ],
@@ -303,8 +303,8 @@
       "shortcut": ""
     },
     {
-      "name": "今日热榜",
-      "url": "https://tophub.today/",
+      "name": "热榜",
+      "url": "https://newsnow.busiyi.world/c/focus",
       "shortcut": ""
     },
     {
@@ -335,8 +335,8 @@
       "shortcut": ""
     },
     {
-      "name": "Slack",
-      "url": "https://slack.com",
+      "name": "Twitter",
+      "url": "https://twitter.com",
       "shortcut": ""
     },
     {
@@ -350,8 +350,8 @@
       "shortcut": ""
     },
     {
-      "name": "Pinterest",
-      "url": "https://pinterest.com/",
+      "name": "Reddit",
+      "url": "http://www.reddit.com/",
       "shortcut": ""
     },
     {
@@ -360,25 +360,25 @@
       "shortcut": ""
     },
     {
-      "name": "Wikihow",
-      "url": "https://zh.wikihow.com/",
-      "shortcut": ""
-    },
-    {
-      "name": "Reddit",
-      "url": "http://www.reddit.com/",
-      "shortcut": ""
-    },
-    {
       "name": "AlternativeTo",
       "url": "https://alternativeto.net/",
+      "shortcut": ""
+    },
+    {
+      "name": "Product Hunt",
+      "url": "https://www.producthunt.com/",
+      "shortcut": ""
+    },
+    {
+      "name": "Softpedia",
+      "url": "https://www.softpedia.com",
       "shortcut": ""
     }
   ],
   "Tools": [
     {
-      "name": "IT Tools",
-      "url": "https://it-tools.tech",
+      "name": "ChatBot",
+      "url": "https://chat.vercel.ai",
       "shortcut": ""
     },
     {
@@ -392,8 +392,8 @@
       "shortcut": ""
     },
     {
-      "name": "百度识图",
-      "url": "http://image.baidu.com/?fr=shitu",
+      "name": "Hoppscotch",
+      "url": "https://hoppscotch.io",
       "shortcut": ""
     },
     {
@@ -402,8 +402,8 @@
       "shortcut": ""
     },
     {
-      "name": "Photopea",
-      "url": "https://www.photopea.com/",
+      "name": "Private Bin",
+      "url": "https://privatebin.net",
       "shortcut": ""
     },
     {
@@ -412,8 +412,8 @@
       "shortcut": ""
     },
     {
-      "name": "跑马灯",
-      "url": "https://tool.retiehe.com/marquee",
+      "name": "JSON Crack",
+      "url": "https://jsoncrack.com",
       "shortcut": ""
     },
     {

@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import type { Site } from '~/store/types'
 import _ from 'lodash/lang'
 import { storeToRefs } from 'pinia'
-import type { Site } from '~/store/types'
 import { useWebsiteStore } from '~/store/website'
 
 const { t } = useI18n()
