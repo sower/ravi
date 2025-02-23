@@ -1,0 +1,1 @@
+function t(n){window.open(n)}function e(n){return`https://favicon.im/${new URL(n).hostname}`}function o(n){return[Object,Array].includes((n||{}).constructor)&&!Object.entries(n||{}).length}export{e as g,o as i,t as o};
