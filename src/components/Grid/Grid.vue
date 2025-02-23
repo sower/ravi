@@ -22,7 +22,7 @@ const positionY = ref(0)
 provide('showContext', showContext)
 provide('positionX', positionX)
 provide('positionY', positionY)
-function handleSelect(key: string | number) {
+function handleSelect(_: string | number) {
   showContext.value = false
   websiteStore.setShowModal(true)
 }

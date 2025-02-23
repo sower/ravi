@@ -48,7 +48,7 @@ watch(searchKey, (cur, pre) => {
       }))
     }
     searchPrompt.value = prompts
-  }).catch(e => console.log(e))
+  }).catch(e => console.warn(e))
 })
 </script>
 

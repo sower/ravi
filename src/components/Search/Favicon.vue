@@ -1,17 +1,12 @@
 <script lang="ts" setup>
-const props = defineProps({
-  src: String,
-  text: String,
-})
+const props = defineProps<{
+  src: string
+  text: string
+}>()
 
 const showImg = ref(Boolean(props.src))
 
-function getFavicon(url: string) {
-  const link = `${new URL(url).origin}/favicon.ico`
-  return link
-}
-
-watch(props, (cur, pre) => {
+watch(props, () => {
   showImg.value = true
 })
 </script>

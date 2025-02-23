@@ -12,7 +12,7 @@ const keys = [
   ['Z', 'X', 'C', 'V', 'B', 'N', 'M'],
 ]
 
-const refKeys: any = reactive({})
+const refKeys = reactive<Record<string, HTMLElement>>({})
 
 function setRefs(e: HTMLElement) {
   if (e)
@@ -27,7 +27,7 @@ function onClick(k: string) {
     window.open(hotkeys[k].url)
 }
 
-function pressKey(e) {
+function pressKey(e: KeyboardEvent) {
   const key = e.key.toUpperCase()
   if (!editable.value && /^[\dA-Z]$/.test(key))
     refKeys[key].className = 'press'

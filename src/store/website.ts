@@ -8,8 +8,7 @@ function saveToStorage(websites: Array<Site>) {
   storage.setItem('websites', JSON.stringify(websites))
 }
 
-export const useWebsiteStore = defineStore({
-  id: 'app-site',
+export const useWebsiteStore = defineStore('app-site', {
   state: () => ({
     websites: JSON.parse(storage.getItem('websites')) || websites,
     currentSite: { name: '', url: '', shortcut: '' },

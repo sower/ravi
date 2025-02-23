@@ -1,48 +1,48 @@
 {
-  "Email": [
+  "AI": [
     {
-      "name": "网易163",
-      "url": "https://mail.163.com/",
+      "name": "通义千问",
+      "url": "https://tongyi.aliyun.com/qianwen",
       "shortcut": ""
     },
     {
-      "name": "网易126",
-      "url": "https://mail.126.com/",
+      "name": "DeepSeek",
+      "url": "https://chat.deepseek.com",
+      "shortcut": "A"
+    },
+    {
+      "name": "豆包",
+      "url": "https://www.doubao.com/chat/",
       "shortcut": ""
     },
     {
-      "name": "QQ邮箱",
-      "url": "http://mail.qq.com",
+      "name": "ChatBot",
+      "url": "https://chat.vercel.ai",
       "shortcut": ""
     },
     {
-      "name": "新浪邮箱",
-      "url": "https://mail.sina.com.cn",
+      "name": "Khoj AI",
+      "url": "https://app.khoj.dev/",
       "shortcut": ""
     },
     {
-      "name": "Moakt",
-      "url": "https://www.moakt.com",
+      "name": "Devv AI",
+      "url": "https://devv.ai/zh",
       "shortcut": ""
     },
     {
-      "name": "Temp-mail",
-      "url": "https://temp-mail.org/",
+      "name": "Phind",
+      "url": "https://www.phind.com/",
       "shortcut": ""
     },
     {
-      "name": "Gmail",
-      "url": "http://gmail.com",
+      "name": "Perplexity",
+      "url": "https://www.perplexity.ai",
       "shortcut": ""
     },
     {
-      "name": "Zoho",
-      "url": "https://www.zoho.com/",
-      "shortcut": ""
-    },
-    {
-      "name": "Outlook",
-      "url": "https://mail.live.com/",
+      "name": "Workers AI",
+      "url": "https://playground.ai.cloudflare.com",
       "shortcut": ""
     }
   ],
@@ -53,11 +53,6 @@
       "shortcut": ""
     },
     {
-      "name": "微博",
-      "url": "http://weibo.com",
-      "shortcut": ""
-    },
-    {
       "name": "豆瓣",
       "url": "http://www.douban.com",
       "shortcut": ""
@@ -65,6 +60,11 @@
     {
       "name": "语雀",
       "url": "https://www.yuque.com/dashboard",
+      "shortcut": ""
+    },
+    {
+      "name": "Follow",
+      "url": "https://app.follow.is",
       "shortcut": ""
     },
     {
@@ -95,21 +95,6 @@
   ],
   "Dev": [
     {
-      "name": "DevDocs",
-      "url": "https://devdocs.io/",
-      "shortcut": ""
-    },
-    {
-      "name": "DevHints",
-      "url": "https://devhints.io/",
-      "shortcut": null
-    },
-    {
-      "name": " UnoCSS",
-      "url": "https://uno.antfu.me/",
-      "shortcut": ""
-    },
-    {
       "name": "RoadMap",
       "url": "https://roadmap.sh",
       "shortcut": ""
@@ -125,8 +110,8 @@
       "shortcut": ""
     },
     {
-      "name": "Linux Man",
-      "url": "https://linuxcommandlibrary.com/",
+      "name": "IT Tools",
+      "url": "https://it-tools.tech",
       "shortcut": ""
     },
     {
@@ -135,8 +120,23 @@
       "shortcut": ""
     },
     {
-      "name": "IT Tools",
-      "url": "https://it-tools.tech",
+      "name": "Cheat.sh",
+      "url": "https://cheat.sh/",
+      "shortcut": ""
+    },
+    {
+      "name": "DevDocs",
+      "url": "https://devdocs.io/",
+      "shortcut": ""
+    },
+    {
+      "name": "DevHints",
+      "url": "https://devhints.io/",
+      "shortcut": null
+    },
+    {
+      "name": " UnoCSS",
+      "url": "https://unocss.dev/interactive",
       "shortcut": ""
     }
   ],
@@ -157,13 +157,18 @@
       "shortcut": ""
     },
     {
-      "name": "石墨文档",
-      "url": "https://shimo.im/",
+      "name": "Mermaid",
+      "url": "https://mermaid.live",
       "shortcut": ""
     },
     {
-      "name": "腾讯文档",
-      "url": "https://docs.qq.com/",
+      "name": "PlantUML",
+      "url": "https://www.plantuml.com",
+      "shortcut": ""
+    },
+    {
+      "name": "D2",
+      "url": "https://play.d2lang.com",
       "shortcut": ""
     },
     {
@@ -177,13 +182,8 @@
       "shortcut": ""
     },
     {
-      "name": "Processon",
-      "url": "https://www.processon.com/",
-      "shortcut": ""
-    },
-    {
-      "name": "PlantUML",
-      "url": "https://www.plantuml.com",
+      "name": "MarkMap",
+      "url": "https://markmap.js.org/repl",
       "shortcut": ""
     }
   ],
@@ -377,8 +377,8 @@
   ],
   "Tools": [
     {
-      "name": "ChatBot",
-      "url": "https://chat.vercel.ai",
+      "name": "DeepL翻译",
+      "url": "https://www.deepl.com/zh/translator",
       "shortcut": ""
     },
     {

@@ -4,7 +4,6 @@ import type { Site } from '~/store/types'
 import { onClickOutside } from '@vueuse/core'
 import { inject, nextTick, ref } from 'vue'
 import { useWebsiteStore } from '~/store/website'
-import { openUrl } from '~/utils/common'
 
 const props = defineProps({
   title: String,
@@ -42,7 +41,7 @@ function saveTitle() {
 
 // 失焦即保存
 const target = ref(null)
-onClickOutside(target, event => saveTitle())
+onClickOutside(target, _ => saveTitle())
 
 const showContext = inject<boolean>('showContext')
 const positionX = inject<number>('positionX')
@@ -75,11 +74,11 @@ function handleContextMenu(site: Site, event: MouseEvent) {
       v-for="(site, index) in sites" :key="site.id"
       @contextmenu="handleContextMenu({ ...site, index, group: title }, $event)"
     >
-      <div class="square" @click="openUrl(site.url)">
+      <a class="square" :href="site.url" target="_blank">
         <n-ellipsis max-w-sm>
           {{ site.name }}
         </n-ellipsis>
-      </div>
+      </a>
     </n-grid-item>
   </n-grid>
 </template>

@@ -27,7 +27,7 @@ export async function getSearchPrompt(wd) {
   return axios.jsonp(`https://www.baidu.com/sugrec?p=3&json=1&prod=pc&wd=${wd}`)
     .then(data => data.g?.map(e => e.q))
     .catch((error) => { // 请求失败处理
-      console.log(error)
+      console.warn(error)
       return error
     })
 }
@@ -37,5 +37,5 @@ export function getTophub() {
     .then((response) => {
       return response.data.items
     })
-    .catch(error => console.log(error))
+    .catch(error => console.warn(error))
 }

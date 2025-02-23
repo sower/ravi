@@ -10,7 +10,7 @@ const options = Object.keys(websites.value).map((group) => {
 })
 
 // default select group
-const selectGroup = ref(options[0].key)
+const selectGroup = ref<string | number>(options[0].key)
 
 const currentGroup = computed(() => {
   for (const option of options) {
@@ -34,15 +34,16 @@ function handleSelect(key: string | number) {
   </n-dropdown>
   <div mx-auto mb-2xl mt-5xl max-w-80vw>
     <div flex="~ wrap" justify-around>
-      <div
-        v-for="site in currentGroup.sites" :key="site" class="hover:color-#18a058" flex="~ col"
-        m-2 cursor-pointer items-center @click="openUrl(site.url)"
+      <a
+        v-for="site in currentGroup.sites" :key="site"
+        :href="site.url" target="_blank" class="hover:color-#18a058" flex="~ col"
+        m-2 cursor-pointer items-center
       >
         <Favicon :src="site.url" :text="site.name" />
         <p m-1>
           {{ site.name }}
         </p>
-      </div>
+      </a>
     </div>
   </div>
 </template>

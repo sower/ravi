@@ -73,7 +73,7 @@ function onSearch(searchValue: string) {
       >
         {{ engine.name }}
         <template #avatar>
-          <n-avatar color="white" :src="engine.favicon" />
+          <n-avatar color="white" :src="getFavicon(engine.url)" :fallback-src="engine.favicon" />
         </template>
       </n-tag>
     </n-space>
